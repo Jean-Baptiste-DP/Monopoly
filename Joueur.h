@@ -6,20 +6,19 @@
 #define MONOPOLY_JOUEUR_H
 using namespace std;
 #include <iostream>
-#include "Pion.h"
+#include "Case.h"
 
 class Joueur {
 private:
     string Nom;
-    Pion pion;
     int solde;
+    Case *position;
 public:
-    Joueur(string Name,Pion pion);
+    Joueur(string Name);
     void jouer();
+    void deplacer(int nb_cases);
     void debiter(int montant);
     void crediter(int montant);
-    const Pion &getPion() const;
-    void setPion(const Pion &pion);
     int getSolde() const;
     void setSolde(int solde);
     const string &getNom() const;

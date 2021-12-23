@@ -3,4 +3,4 @@ project(Monopoly)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Monopoly main.cpp Case.cpp Case.h Pion.cpp Pion.h Joueur.cpp Joueur.h plateau.cpp plateau.h jeu.cpp jeu.h)
+add_executable(Monopoly main.cpp Case.cpp Case.h Joueur.cpp Joueur.h plateau.cpp plateau.h jeu.cpp jeu.h Propriete.cpp Propriete.h)

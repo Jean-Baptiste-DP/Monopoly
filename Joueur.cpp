@@ -4,9 +4,9 @@
 
 #include "Joueur.h"
 
-Joueur::Joueur(string Name, Pion pion) {
+
+Joueur::Joueur(string Name) {
     Nom = Name;
-    pion = pion;
     solde = 1500;
 }
 
@@ -20,12 +20,8 @@ void Joueur::crediter(int montant) {
     solde+=montant;
 }
 
-const Pion &Joueur::getPion() const {
-    return pion;
-}
+void Joueur::deplacer(int nb_cases) {
 
-void Joueur::setPion(const Pion &pion) {
-    Joueur::pion = pion;
 }
 
 int Joueur::getSolde() const {
