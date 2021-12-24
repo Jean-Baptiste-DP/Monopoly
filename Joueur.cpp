@@ -35,3 +35,23 @@ void Joueur::setSolde(int solde) {
 const string &Joueur::getNom() const {
     return Nom;
 }
+
+void Joueur::carte_prison(){
+    nb_carte_prison+=1;
+}
+
+void Joueur::achat_maison(){
+    nb_maison+=1;
+}
+
+void Joueur::achat_hotel() {
+    nb_hotel+=1;
+}
+
+int Joueur::getNbMaison() const {
+    return nb_maison;
+}
+
+int Joueur::getNbHotel() const {
+    return nb_hotel;
+}

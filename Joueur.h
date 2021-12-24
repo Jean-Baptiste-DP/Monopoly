@@ -7,12 +7,17 @@
 using namespace std;
 #include <iostream>
 #include "Case.h"
+#include "Carte.h"
 
 class Joueur {
 private:
     string Nom;
     int solde;
     Case *position;
+    int nb_carte_prison;
+    int nb_maison;
+    int nb_hotel;
+
 public:
     Joueur(string Name);
     void jouer();
@@ -22,6 +27,13 @@ public:
     int getSolde() const;
     void setSolde(int solde);
     const string &getNom() const;
+    void carte_prison();
+    void achat_maison();
+    void achat_hotel();
+
+    int getNbMaison() const;
+
+    int getNbHotel() const;
 };
 
 
