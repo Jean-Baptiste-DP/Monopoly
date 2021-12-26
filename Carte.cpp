@@ -19,7 +19,7 @@ Carte::Carte(int numero_carte, int action_deplacement, int action_argent, string
 }
 
 void Carte::piocher_carte() {
-    //On tire aléatoirement une carte ma_carte
+    //On tire aléatoirement une carte
 
 
 }
@@ -32,9 +32,10 @@ void Carte::action_carte(Joueur joueur){
 
     //On effectue l'action
 
-    //Avancer de n cases
+    //Reculer de 3 cases
     if (deplacement!=0){
-        joueur.deplacer(deplacement);
+        joueur.deplacer(45);
+        joueur.debiter(200);
     }
 
     //Action sur argent avec la banque
