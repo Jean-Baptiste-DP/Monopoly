@@ -6,10 +6,11 @@
 #include <iostream>
 using namespace std;
 
-Prison::Prison(string nom_case,Case *case_suivante):Case() {
-    nom=nom_case;
-    suivante=case_suivante;
-}
+Prison::Prison(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {}
 
-void Prison::arreterSur(Joueur *joueur, int nombre_cases) {}
+void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
+    //si un 6 : on peut sortir de prison
+    //au bout du 4ème essai : on sort de prison
+    //si on a une carte sortir de prison : on peut sortir de prison
+}
 
