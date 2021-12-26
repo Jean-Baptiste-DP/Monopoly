@@ -16,7 +16,7 @@ void Communaute::arreterSur(Joueur *joueur, int nombre_cases){
     //remettre carte en dessous de la pile
     //if(prison!=0){
     //    joueur.carte_prison();
-    //}
+    //} 
 }
 
 //suivre les instructions de la carte et la remettre face cachée en-dessous de la pile.
