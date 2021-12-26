@@ -42,7 +42,7 @@ public:
 
     void setLieu(const string &lieu);
 
-    void piocher_carte;
+    void piocher_carte();
 
 };
 

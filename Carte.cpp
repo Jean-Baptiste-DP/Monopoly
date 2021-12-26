@@ -18,9 +18,6 @@ Carte::Carte(int numero_carte, int action_deplacement, int action_argent, string
     ipascher=impot_pascher;
 }
 
-
-}
-
 void Carte::piocher_carte() {
     //On tire aléatoirement une carte ma_carte
 
@@ -41,19 +38,16 @@ void Carte::action_carte(Joueur joueur){
     }
 
     //Action sur argent avec la banque
-
     if (argent=!0){
         joueur.crediter(argent);
     }
 
     //Carte vous êtes libérer de prison
-
     if(prison!=0){
         joueur.carte_prison();
     }
 
     //Aller à une case précise
-
     if(lieu!=""){
         joueur.setPosition(lieu);
     }

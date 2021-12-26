@@ -9,7 +9,7 @@ using namespace std;
 class Joueur;
 
 class Case {
-private:
+protected:
     string nom;
     Case *suivante;
 public:
