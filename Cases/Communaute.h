@@ -5,11 +5,8 @@
 #ifndef MONOPOLY_COMMUNAUTE_H
 #define MONOPOLY_COMMUNAUTE_H
 
-#include <iostream>
 #include "Case.h"
-#include "Carte.h"
-using namespace std;
-class Joueur;
+#include "../Carte.h"
 
 class Communaute : public Case {
 public :

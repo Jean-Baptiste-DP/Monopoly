@@ -6,7 +6,7 @@
 #define MONOPOLY_CASE_H
 using namespace std;
 #include <iostream>
-class Joueur;
+#include "../Joueur.h"
 
 class Case {
 protected:
@@ -16,14 +16,11 @@ public:
     Case();
     Case(string nom_case,Case *case_suivante);
     void arreterSur(Joueur *joueur, int nombre_cases);
-
     const string &getNom() const;
-
     void setNom(const string &nom);
-
     Case *getSuivante() const;
-
     void setSuivante(Case *suivante);
+    Case *deplacer(int nb_pas);
 };
 
 

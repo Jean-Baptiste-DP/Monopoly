@@ -6,10 +6,9 @@
 #define MONOPOLY_JOUEUR_H
 using namespace std;
 #include <iostream>
-#include "Case.h"
-#include "Carte.h"
+class Case;
 
-class Joueur {
+class Joueur{
 private:
     string Nom;
     int solde;
@@ -30,7 +29,7 @@ public:
     void carte_prison();
     void achat_maison();
     void achat_hotel();
-
+    bool operator==(Joueur autrejoueur);
     int getNbMaison() const;
 
     int getNbHotel() const;

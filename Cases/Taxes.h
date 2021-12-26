@@ -1,0 +1,19 @@
+//
+// Created by jbdur on 26/12/2021.
+//
+
+#ifndef MONOPOLY_PARC_H
+#define MONOPOLY_PARC_H
+#include "Case.h"
+
+class Taxes: public Case {
+private:
+    int prix;
+public:
+    Taxes(string nom, Case *case_suivante, int prix);
+    void arreterSur(Joueur *joueur, int nombre_cases);
+};
+
+
+
+#endif //MONOPOLY_TAXES_H

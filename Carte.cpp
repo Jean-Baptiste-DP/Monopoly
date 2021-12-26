@@ -49,7 +49,7 @@ void Carte::action_carte(Joueur joueur){
 
     //Aller à une case précise
     if(lieu!=""){
-        joueur.setPosition(lieu);
+        //joueur.setPosition(lieu);
     }
 
     //Carte impôt maison et hotel

@@ -3,15 +3,12 @@
 //
 
 #include "Depart.h"
-#include "Joueur.h"
-#include <iostream>
-using namespace std;
 
 Depart::Depart(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {
     nom=nom_case;
     suivante=case_suivante;
 }
 
-void Depart::passerSur(Joueur *joueur, int nombre_cases){
+void Depart::arreterSur(Joueur *joueur, int nombre_cases){
     joueur->crediter(200);
 }

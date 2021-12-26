@@ -10,7 +10,9 @@ class Terrain: public Propriete {
 private:
     int loyer[6];
     int prix_maison;
-    Terrain* dans_groupe[];
+    int nb_voisin;
+    Terrain* dans_groupe[2];
+    int nb_maison;
 public:
     Terrain(string nom, int prix_achat, Case *case_suivante,int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison);
     void arreterSur(Joueur *joueur, int nombre_cases);

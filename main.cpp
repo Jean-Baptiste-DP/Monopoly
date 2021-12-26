@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Case.h"
 #include "Joueur.h"
+#include "Cases/Case.h"
 
 int main() {
     Joueur joueur1("toto");
@@ -22,6 +22,6 @@ int main() {
 
     cout<<"Debut : "<<debut.getNom()<<endl;
     cout<<"Avant : "<<(*debut.getSuivante()).getNom()<<endl;
-    cout<<"Fin : "<<(*(*debut.getSuivante()).getSuivante()).getNom()<<endl;
+    cout<<"Fin : "<<(*(*debut.getSuivante()).deplacer(4)).getNom()<<endl;
     cout<<"Re début : "<<(*(*(*debut.getSuivante()).getSuivante()).getSuivante()).getNom()<<endl;
 }

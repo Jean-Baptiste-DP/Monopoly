@@ -5,11 +5,7 @@
 #ifndef MONOPOLY_PRISON_H
 #define MONOPOLY_PRISON_H
 
-
-
 #include "Case.h"
-using namespace std;
-class Joueur;
 
 class Prison:public Case {
 public:

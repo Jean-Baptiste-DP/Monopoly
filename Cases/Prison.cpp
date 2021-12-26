@@ -3,8 +3,6 @@
 //
 
 #include "Prison.h"
-#include <iostream>
-using namespace std;
 
 Prison::Prison(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {}
 

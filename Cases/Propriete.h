@@ -5,12 +5,13 @@
 #ifndef MONOPOLY_PROPRIETE_H
 #define MONOPOLY_PROPRIETE_H
 #include "Case.h"
-#include "Joueur.h"
+#include "../Joueur.h"
 
 class Propriete: public Case {
-private:
+protected:
     int prix_achat;
     int prix_hypotheque;
+    int achete;
     Joueur *proprietaire;
 public:
     Propriete(string nom, int prix_achat, Case *case_suivante);

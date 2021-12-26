@@ -3,7 +3,6 @@
 //
 
 #include "Case.h"
-#include "Joueur.h"
 
 Case::Case() {}
 
@@ -28,4 +27,12 @@ Case *Case::getSuivante() const {
 
 void Case::setSuivante(Case *suivante) {
     Case::suivante = suivante;
+}
+
+Case* Case::deplacer(int nb_pas) {
+    if (nb_pas<=1){
+        return suivante;
+    }else{
+        return suivante->deplacer(nb_pas-1);
+    }
 }

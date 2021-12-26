@@ -3,7 +3,7 @@
 //
 
 #include "Joueur.h"
-
+#include "Cases/Case.h"
 
 Joueur::Joueur(string Name) {
     Nom = Name;
@@ -54,4 +54,8 @@ int Joueur::getNbMaison() const {
 
 int Joueur::getNbHotel() const {
     return nb_hotel;
+}
+
+bool Joueur::operator==(Joueur autrejoueur) {
+    return (Nom==autrejoueur.Nom);
 }

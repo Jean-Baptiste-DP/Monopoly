@@ -5,10 +5,7 @@
 #ifndef MONOPOLY_CHANCE_H
 #define MONOPOLY_CHANCE_H
 
-#include <iostream>
 #include "Case.h"
-using namespace std;
-class Joueur;
 
 class Chance : public Case {
 public :
