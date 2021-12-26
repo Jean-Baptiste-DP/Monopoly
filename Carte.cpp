@@ -3,11 +3,10 @@
 //
 
 #include "Carte.h"
-#include "Joueur.h"
 
 Carte::Carte(){}
 
-Carte::Carte(int numero_carte, int action_deplacement, int action_argent, string action_lieu, int action_prison, int impot_pascher, int impot_cher, string explication){
+Carte::Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, string action_lieu, string explication){
     numero=numero_carte;
     deplacement=action_deplacement;
     argent=action_argent;

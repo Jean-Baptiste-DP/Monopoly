@@ -6,6 +6,7 @@
 #define MONOPOLY_CARTE_H
 using namespace std;
 #include <iostream>
+#include "Joueur.h"
 
 class Carte {
 private:
@@ -20,7 +21,7 @@ private:
 
 public:
     Carte();
-    Carte (int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, string action_lieu, string explication);
+    Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, string action_lieu, string explication);
 
     int getNumero() const;
 
@@ -43,7 +44,7 @@ public:
     void setLieu(const string &lieu);
 
     void piocher_carte();
-
+    void action_carte(Joueur joueur);
 };
 
 
