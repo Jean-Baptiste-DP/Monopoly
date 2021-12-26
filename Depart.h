@@ -13,7 +13,6 @@ class Depart:public Case {
 public:
     Depart(string nom_case,Case *case_suivante);
     void passerSur(Joueur *joueur, int nombre_cases);
-    void crediter_depart();
 };
 
 #endif //MONOPOLY_DEPART_H
