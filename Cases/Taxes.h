@@ -2,8 +2,8 @@
 // Created by jbdur on 26/12/2021.
 //
 
-#ifndef MONOPOLY_PARC_H
-#define MONOPOLY_PARC_H
+#ifndef MONOPOLY_TAXES_H
+#define MONOPOLY_TAXES_H
 #include "Case.h"
 
 class Taxes: public Case {

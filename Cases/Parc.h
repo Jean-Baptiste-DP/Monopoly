@@ -6,11 +6,11 @@
 #define MONOPOLY_PARC_H
 #include "Case.h"
 
-class Parc: public Case {
+class Parc:public Case{
 private:
 
 public:
-    Parc(string nom, Case *case_suivante);
+    Parc(Case *case_suivante);
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

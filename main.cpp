@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Joueur.h"
 #include "Cases/Case.h"
+#include "plateau.h"
 
 int main() {
     Joueur joueur1("toto");
@@ -13,7 +14,7 @@ int main() {
     joueur1.debiter(100);
     cout<<"Nouveau solde après débit"<<joueur1.getNom()<<" : "<<joueur1.getSolde()<<endl;
 
-    std::cout << "test2" << std::endl;
+    std::cout << "\ntest2" << std::endl;
     Case intermediaire;
     Case case_finale("rue de la paix",&intermediaire);
     Case avant("champ élysées",&case_finale);

@@ -4,7 +4,7 @@
 
 #include "Parc.h"
 
-Parc::Parc(string nom, Case *case_suivante): Case(nom,case_suivante) {
+Parc::Parc(Case *case_suivante): Case("Parc Gratuit",case_suivante) {
 
 }
 
