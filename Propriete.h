@@ -10,6 +10,7 @@
 class Propriete: public Case {
 private:
     int prix_achat;
+    int prix_hypotheque;
     Joueur *proprietaire;
 public:
     Propriete(string nom, int prix_achat, Case *case_suivante);
