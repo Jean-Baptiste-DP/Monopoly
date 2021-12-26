@@ -7,12 +7,13 @@
 
 #include <iostream>
 #include "Case.h"
+#include "Carte.h"
 using namespace std;
 class Joueur;
 
 class Communaute : public Case {
 public :
-    Communaute(string nom_case);
+    Communaute(string nom_case,Case *case_suivante);
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 
