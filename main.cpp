@@ -39,6 +39,7 @@ int main() {
     Carte Liberer_prison (1, 0, 0, 1, 0, 0, "", "Carte Liberer de prison");
     Liberer_prison.action_carte(&joueur1);
     cout<<"\n"<<joueur1.getNbCartePrison()<<endl;
+    
 
 
 }
