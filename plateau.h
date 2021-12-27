@@ -18,7 +18,7 @@
 
 class plateau {
 private:
-    Case liste_cases[40];
+    Case* liste_cases[40];
 public:
     plateau();
     Case* aller_vers(int indice);
