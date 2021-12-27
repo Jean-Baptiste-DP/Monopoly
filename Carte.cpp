@@ -44,7 +44,7 @@ void Carte::action_carte(Joueur joueur){
 
     //Carte vous êtes libérer de prison
     if(prison!=0){
-        joueur.carte_prison();
+        joueur.gagne_carte_prison();
     }
 
     //Aller à une case précise

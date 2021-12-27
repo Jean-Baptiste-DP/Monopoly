@@ -16,6 +16,7 @@ private:
     int nb_carte_prison;
     int nb_maison;
     int nb_hotel;
+    bool en_prison;
 
 public:
     Joueur(string Name);
@@ -26,12 +27,15 @@ public:
     int getSolde() const;
     void setSolde(int solde);
     const string &getNom() const;
-    void carte_prison();
+    void gagne_carte_prison();
+    void perd_carte_prison();
+    int getNbCartePrison() const;
+    int getPrison() const;
+    void setPrison(bool en_prison);
     void achat_maison();
     void achat_hotel();
     bool operator==(Joueur autrejoueur);
     int getNbMaison() const;
-
     int getNbHotel() const;
 };
 

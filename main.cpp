@@ -17,9 +17,11 @@ int main() {
     std::cout << "\ntest2" << std::endl;
     Case intermediaire;
     Case case_finale("rue de la paix",&intermediaire);
-    Case avant("champ élysées",&case_finale);
-    Depart debut("debut",&avant);
+    //Case avant("champ élysées",&case_finale);
+    Prison prison("Prison",&case_finale);
+    Depart debut("debut",&prison);
     case_finale.setSuivante(&debut);
+
 
     cout<<"Debut : "<<debut.getNom()<<endl;
     cout<<"Avant : "<<(*debut.getSuivante()).getNom()<<endl;
@@ -29,6 +31,14 @@ int main() {
     std::cout << "\ntest3" << std::endl;
     debut.arreterSur(&joueur1, 0);
     cout << "Nouveau solde  " << joueur1.getNom() << " apres case depart : " << joueur1.getSolde() << endl;
-    std::cout << "test4" << std::endl;
+
+    std::cout << "\ntest4" << std::endl;
+    prison.arreterSur(&joueur1, 0);
+    std::cout << "test5" << std::endl;
+    /*
+    Carte Liberer_prison (1, 0, 0, 1, 0, 0, "", "Carte Liberer de prison");
+    Liberer_prison.action_carte(joueur1);
+     */
+
 
 }

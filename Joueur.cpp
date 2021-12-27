@@ -8,6 +8,8 @@
 Joueur::Joueur(string Name) {
     Nom = Name;
     solde = 1500;
+    en_prison=true;
+    nb_carte_prison=0;
 }
 
 void Joueur::jouer(){}
@@ -36,8 +38,24 @@ const string &Joueur::getNom() const {
     return Nom;
 }
 
-void Joueur::carte_prison(){
+void Joueur::gagne_carte_prison(){
     nb_carte_prison+=1;
+}
+
+void Joueur::perd_carte_prison() {
+    nb_carte_prison-=1;
+}
+
+int Joueur::getNbCartePrison() const{
+    return nb_carte_prison;
+}
+
+int Joueur::getPrison() const{
+    return en_prison;
+}
+
+void Joueur::setPrison(bool en_prison) {
+    Joueur::en_prison=en_prison;
 }
 
 void Joueur::achat_maison(){
