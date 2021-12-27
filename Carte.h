@@ -44,7 +44,7 @@ public:
     void setLieu(const string &lieu);
 
     void piocher_carte();
-    void action_carte(Joueur joueur);
+    void action_carte(Joueur *joueur);
 };
 
 

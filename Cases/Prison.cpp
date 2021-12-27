@@ -83,8 +83,7 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     cout << "Utilisation de la carte" << endl;
                     if (joueur->getNbCartePrison() == 0) {
                         cout << "Vous n'avez pas de cartes prison en votre possession" << endl;
-                    }
-                    else {
+                    } else {
                         joueur->perd_carte_prison();
                         //lancer les dés
                         //joueur->deplacer(nombre_des)

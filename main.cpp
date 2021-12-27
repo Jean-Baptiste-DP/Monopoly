@@ -33,12 +33,12 @@ int main() {
     cout << "Nouveau solde  " << joueur1.getNom() << " apres case depart : " << joueur1.getSolde() << endl;
 
     std::cout << "\ntest4" << std::endl;
-    prison.arreterSur(&joueur1, 0);
+    //prison.arreterSur(&joueur1, 0);
     std::cout << "test5" << std::endl;
-    /*
+    cout<<joueur1.getNbCartePrison()<<endl;
     Carte Liberer_prison (1, 0, 0, 1, 0, 0, "", "Carte Liberer de prison");
-    Liberer_prison.action_carte(joueur1);
-     */
+    Liberer_prison.action_carte(&joueur1);
+    cout<<"\n"<<joueur1.getNbCartePrison()<<endl;
 
 
 }
