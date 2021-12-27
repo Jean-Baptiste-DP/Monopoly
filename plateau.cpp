@@ -25,7 +25,7 @@ plateau::plateau() {
     liste_cases[24]=Terrain("Avenue Henri-Martin",240,&liste_cases[25],20,100,300,750,925,1100,150);
     liste_cases[23]=Terrain("Boulevard Malesherbes",220,&liste_cases[24],18,90,250,700,875,1050,150);
     liste_cases[22]=Chance("Chance",&liste_cases[23]);
-    liste_cases[21]=Terrain("Boulevard Malesherbes",220,&liste_cases[22],18,90,250,700,875,1050,150);
+    liste_cases[21]=Terrain("Avenue Matignon",220,&liste_cases[22],18,90,250,700,875,1050,150);
     liste_cases[20]=Parc(&liste_cases[21]);
     liste_cases[19]=Terrain("Place Pigalle",200,&liste_cases[20],16,80,220,600,800,1000,100);
     liste_cases[18]=Terrain("Boulevard Saint Michel",180,&liste_cases[19],14,70,200,550,750,950,100);
@@ -35,14 +35,14 @@ plateau::plateau() {
     liste_cases[14]=Terrain("Rue de Paradis",160,&liste_cases[15],12,60,180,500,700,900,100);
     liste_cases[13]=Terrain("Avenue de Neuilly",140,&liste_cases[14],10,50,150,450,625,750,100);
     liste_cases[12]=Compagnie("Compagnie de distribution d'électricité",150,&liste_cases[13]);
-    liste_cases[11]=Terrain("Avenue de Neuilly",140,&liste_cases[12],10,50,150,450,625,750,100);
+    liste_cases[11]=Terrain("Boulevard de la Villette",140,&liste_cases[12],10,50,150,450,625,750,100);
     liste_cases[10]=Prison("Prison",&liste_cases[11]);
     liste_cases[9]=Terrain("Avenue de la République",120,&liste_cases[10],8,40,100,300,450,600,50);
     liste_cases[8]=Terrain("Rue de Courcelles",100,&liste_cases[9],6,30,90,270,400,550,50);
     liste_cases[7]=Chance("Chance",&liste_cases[8]);
-    liste_cases[6]=Terrain("Rue de Courcelles",100,&liste_cases[7],6,30,90,270,400,550,50);
+    liste_cases[6]=Terrain("Rue de Vaugirard",100,&liste_cases[7],6,30,90,270,400,550,50);
     liste_cases[5]=Gare("Gare Montparnasse",200,&liste_cases[6]);
-    liste_cases[4]=Taxes("Impôt sur le revenu",&liste_cases[5],200);
+    liste_cases[4]=Taxes("Impôts sur le revenu",&liste_cases[5],200);
     liste_cases[3]=Terrain("Rue Lecourbe",60,&liste_cases[4],4,20,60,180,320,450,50);
     liste_cases[2]=Communaute("Caisse de Communauté",&liste_cases[3]);
     liste_cases[1]=Terrain("Boulevard de Belleville",60,&liste_cases[2],2,10,30,90,160,250,50);
