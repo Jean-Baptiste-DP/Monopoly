@@ -53,9 +53,9 @@ ListeCarte::ListeCarte(){
 };
 
 
-void piocher_carte_chance(Joueur *joueur){
+void ListeCarte::piocher_carte_chance(Joueur *joueur){
     std::default_random_engine re(time(0));
     std::uniform_int_distribution<int> distrib{0, 15};
-    liste_carte_chance[distrib(re)].action_carte(Joueur *joueur);
+    liste_carte_chance[distrib(re)]->action_carte(joueur);
 
 }
