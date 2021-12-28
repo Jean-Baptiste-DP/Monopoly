@@ -10,10 +10,12 @@
 class ListeCarte {
 private:
     Carte* liste_carte_chance[16];
+    Carte* liste_carte_communaute[14];
 
 public:
     ListeCarte();
     void piocher_carte_chance(Joueur *joueur);
+    void piocher_carte_communaute(Joueur *joueur);
 };
 
 
