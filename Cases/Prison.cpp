@@ -16,9 +16,9 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
     cout << "Nombre de cartes : " << joueur->getNbCartePrison() << endl;
     if (nom == "Prison") {
         cout << "Entree if ok" << endl;
-        if (joueur->getPrison() == true) {
+        if (joueur->getPrison()) {
             if (nombre_tour == 4) {
-                if (joueur->getNbCartePrison() != 0) {
+                if (joueur->getNbCartePrison() > 0) {
                     cout << "Voulez-vous utiliser votre carte 'sortir de prison' ? "
                             "Merci de repondre : 'oui' ou 'non' en fonction de votre choix" << endl;
                     cin >> reponse;
@@ -30,7 +30,7 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                         joueur->setPrison(false);
                         cout<<"Cartes : "<<joueur->getNbCartePrison()<<endl;
                     }
-                    if (reponse == "non") {
+                    else{
                         joueur->debiter(50);
                         //lancer_des = lancer les dés;
                         //joueur->deplacer(lancer_des);
@@ -61,7 +61,19 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     cout << joueur->getSolde() << endl;
 
                 }
-                else if (reponse == "lancer") {
+                else if (reponse == "utiliser carte") { //pas l'impression qu'il rentre dans cette boucle
+                    cout << "Utilisation de la carte" << endl;
+                    if (joueur->getNbCartePrison() == 0) {
+                        cout << "Vous n'avez pas de cartes prison en votre possession" << endl;
+                    }
+                    else {
+                        joueur->perd_carte_prison();
+                        //lancer les dés
+                        //joueur->deplacer(nombre_des)
+                        joueur->setPrison(false);
+                        cout << "Nombre de cartes restantes: " << joueur->getNbCartePrison() << endl;
+                    }
+                }else{
                     /*
                     lancer les dés
                     if (lancer_des==double){
@@ -79,32 +91,18 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     nombre_tour += 1;
                     cout << "Nombre de tour en prison: " << nombre_tour << endl;
                 }
-                else if (reponse == "utiliser carte") { //pas l'impression qu'il rentre dans cette boucle
-                    cout << "Utilisation de la carte" << endl;
-                    if (joueur->getNbCartePrison() == 0) {
-                        cout << "Vous n'avez pas de cartes prison en votre possession" << endl;
-                    }
-                    else {
-                        joueur->perd_carte_prison();
-                        //lancer les dés
-                        //joueur->deplacer(nombre_des)
-                        joueur->setPrison(false);
-                        cout << "Nombre de cartes restantes: " << joueur->getNbCartePrison() << endl;
-                    }
-                }
-                else{}
             }
+        }else {
+            cout << "Simple visite" << endl;
         }
     }
-    else if (nom == "Aller en prison") {
+    else{
         joueur->deplacer(20);
         cout << "nombre de tour: " << nombre_tour << endl;
         joueur->setPrison(true);
         cout << "Test envoi prison: " << joueur->getPrison() << endl;
     }
-    else {
-        cout << "Simple visite" << endl;
-    }
+
 }
 
 //joueur en prison :
