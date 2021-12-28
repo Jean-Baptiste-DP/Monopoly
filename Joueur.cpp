@@ -81,3 +81,5 @@ int Joueur::getNbHotel() const {
 bool Joueur::operator==(Joueur autrejoueur) {
     return (Nom==autrejoueur.Nom);
 }
+
+

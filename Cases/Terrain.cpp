@@ -23,7 +23,7 @@ void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
         else{
             joueur->debiter(loyer[nb_maison]);
             proprietaire->crediter(loyer[nb_maison]);
-            cout<<"Vous êtes sur "<<nom<<". Vous devez "<<loyer[nb_maison]<<"à"<<proprietaire<<endl;
+            cout<<"Vous êtes sur "<<nom<<". Vous devez "<<loyer[nb_maison]<<"à"<<proprietaire->getNom()<<endl;
             cout<<"Fin de tour"<<endl;
         }
     }
@@ -35,7 +35,8 @@ void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
         if(reponse=="oui"){
             joueur->debiter(prix_achat);
             proprietaire=joueur;
-            cout<<"Achat effectué. Fin de tour."
+            achete=true;
+            cout<<"Achat effectué. Fin de tour."<<endl;
         }
         else{
             cout<<"Fin de tour";
