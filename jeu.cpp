@@ -5,5 +5,6 @@
 #include "jeu.h"
 
 jeu::jeu(){
-     paquet=&ListeCarte();
+    ListeCarte vrai_paquet;
+    paquet=&vrai_paquet;
 };
