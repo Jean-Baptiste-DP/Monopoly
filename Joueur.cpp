@@ -9,7 +9,8 @@ Joueur::Joueur(string Name) {
     Nom = Name;
     solde = 1500;
     en_prison=true;
-    nb_carte_prison=0;
+    nb_carte_prison=1;
+    nb_tour_prison=1;
 }
 
 void Joueur::jouer(){}
@@ -60,6 +61,14 @@ int Joueur::getPrison() const{
 
 void Joueur::setPrison(bool en_prison) {
     Joueur::en_prison=en_prison;
+}
+
+int Joueur::getNbTourPrison() const{
+    return nb_tour_prison;
+}
+
+void Joueur::ajout_tour_prison() {
+    Joueur::nb_tour_prison+=1;
 }
 
 void Joueur::achat_maison(){

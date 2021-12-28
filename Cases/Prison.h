@@ -8,11 +8,13 @@
 #include "Case.h"
 #include "../Carte.h"
 #include "../Joueur.h"
+#include "../jeu.h"
 
 class Prison:public Case {
 private:
-    int nombre_tour;
-
+    int nb_tour_prison;
+    jeu de1;
+    jeu de2;
 public:
     Prison(string nom_case, Case *case_suivante);
     void arreterSur(Joueur *joueur, int nombre_cases);
