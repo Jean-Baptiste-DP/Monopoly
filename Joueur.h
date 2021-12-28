@@ -22,6 +22,7 @@ public:
     Joueur(string Name);
     void jouer();
     void deplacer(int nb_cases);
+    void aller_vers(int numero_case);
     void debiter(int montant);
     void crediter(int montant);
     int getSolde() const;

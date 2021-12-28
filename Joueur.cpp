@@ -3,7 +3,7 @@
 //
 
 #include "Joueur.h"
-#include "Cases/Case.h"
+#include "plateau.h"
 
 Joueur::Joueur(string Name) {
     Nom = Name;
@@ -23,6 +23,10 @@ void Joueur::crediter(int montant) {
 }
 
 void Joueur::deplacer(int nb_cases) {
+    position->deplacer(nb_cases);
+}
+
+void Joueur::aller_vers(int numero_case) {
 
 }
 
