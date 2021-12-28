@@ -6,7 +6,14 @@
 #define MONOPOLY_JEU_H
 
 
+#include "ListeCarte.h"
+
 class jeu {
+private:
+    ListeCarte* paquet;
+
+public:
+    jeu();
 
 };
 

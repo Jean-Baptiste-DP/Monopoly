@@ -11,7 +11,7 @@ class Propriete: public Case {
 protected:
     int prix_achat;
     int prix_hypotheque;
-    int achete;
+    bool achete;
     Joueur *proprietaire;
 public:
     Propriete(string nom, int prix_achat, Case *case_suivante);

@@ -88,6 +88,7 @@ ListeCarte::ListeCarte(){
 };
 
 
+
 void ListeCarte::piocher_carte_chance(Joueur *joueur){
     std::default_random_engine re(time(0));
     std::uniform_int_distribution<int> distrib{0, 15};

@@ -3,3 +3,7 @@
 //
 
 #include "jeu.h"
+
+jeu::jeu(){
+     paquet=&ListeCarte();
+};

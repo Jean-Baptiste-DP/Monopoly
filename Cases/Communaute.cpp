@@ -7,12 +7,7 @@
 Communaute::Communaute(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {}
 
 void Communaute::arreterSur(Joueur *joueur, int nombre_cases){
-    //joueur->piocher_carte();
-    //joueur->action_carte();
-    //remettre carte en dessous de la pile
-    //if(prison!=0){
-    //    joueur.carte_prison();
-    //}
+    //paquet->piocher_carte_chance(joueur);
 }
 
 //suivre les instructions de la carte et la remettre face cachée en-dessous de la pile.
