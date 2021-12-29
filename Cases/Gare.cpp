@@ -7,6 +7,7 @@
 Gare::Gare(string nom, int prix_achat, Case *case_suivante): Propriete(nom,prix_achat,case_suivante) {}
 
 void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
+    cout<<"Vous etes sur "<<nom<<endl;
     if(achete){
         if(joueur==proprietaire){
             cout<<"Vous êtes sur "<<nom<<": case dont vous êtes propriétaire. Fin de tour."<<endl;
@@ -35,19 +36,7 @@ void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
         }
     }
     else{
-        string reponse;
-        cout<<"Vous êtes arrêter sur"<<nom<<". Ce terrain est disponible vous pouvez l'acheter pour "<<prix_achat<<endl;
-        cout<<"Merci de répondre 'oui' ou 'non' en fonction de si vous souhaitez l'acheter ou non"<<endl;
-        cin >> reponse;
-        if(reponse=="oui"){
-            joueur->debiter(prix_achat);
-            proprietaire=joueur;
-            achete=true;
-            cout<<"Achat effectué. Fin de tour."<<endl;
-        }
-        else{
-            cout<<"Fin de tour";
-        }
+        acheter(joueur);
     }
 }
 

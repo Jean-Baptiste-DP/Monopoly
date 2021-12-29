@@ -10,5 +10,6 @@ Depart::Depart(string nom_case,Case *case_suivante):Case(nom_case, case_suivante
 }
 
 void Depart::arreterSur(Joueur *joueur, int nombre_cases){
+    cout<<"Vous etes sur "<<nom<<endl;
     joueur->crediter(200);
 }

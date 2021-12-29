@@ -14,7 +14,7 @@ protected:
     Joueur *proprietaire;
 public:
     Propriete(string nom, int prix_achat, Case *case_suivante);
-
+    void acheter(Joueur *joueur);
 };
 
 #endif //MONOPOLY_PROPRIETE_H

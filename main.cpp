@@ -56,4 +56,7 @@ int main() {
     cout<<"d:"<<de1.getDe()<<endl;
     cout<<"e:"<<de2.getDe()<<endl;
     */
+    cout << "Test de jeu"<<endl;
+    jeu monJeu;
+    monJeu.Jouer();
 }

@@ -38,10 +38,12 @@ plateau *jeu::getMonPlateau(){
 }
 
 void jeu::Jouer(){
+    cout<<"Début du jeu"<<endl;
     int nombre_actions=0;
     while(nombre_actions<10){
         nombre_actions++;
-        listeJoueur[joueur_en_cours]->jouer();
+        cout<<nombre_actions<<endl;
+        cout<<"Dans jeu, tour de : "<<listeJoueur[joueur_en_cours]->getNom()<<endl;
         joueur_en_cours=(joueur_en_cours+1)%nbJoueurs;
     }
 }

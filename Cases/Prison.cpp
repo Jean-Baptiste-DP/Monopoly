@@ -8,6 +8,7 @@ Prison::Prison(string nom_case, Case *case_suivante):Case(nom_case, case_suivant
 }
 
 void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
+    cout<<"Vous etes sur "<<nom<<endl;
     string reponse;
     cout << nom << endl;
     cout << "Nombre de tour : " << joueur-> getNbTourPrison() << endl;

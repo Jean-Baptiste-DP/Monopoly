@@ -9,5 +9,6 @@ Taxes::Taxes(string nom, Case *case_suivante,int prix): Case(nom,case_suivante) 
 }
 
 void Taxes::arreterSur(Joueur *joueur, int nombre_cases) {
+    cout<<"Vous etes sur "<<nom<<endl;
     joueur->debiter(prix);
 }

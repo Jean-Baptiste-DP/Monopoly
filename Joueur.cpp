@@ -24,6 +24,7 @@ Joueur::Joueur() {
 }
 
 void Joueur::jouer(){
+    cout<<"Tour de : "<<Nom<<endl;
     if (en_prison){
         position->arreterSur(this,0);
     }else{
