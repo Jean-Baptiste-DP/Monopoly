@@ -10,18 +10,11 @@ jeu::jeu(){
     paquet=&vrai_paquet;
 }
 
-jeu::jeu(int de) {
-    de=0;
-}
-
-void jeu::lancer_des(Joueur *joueur){
+int jeu::lancer_des(){
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(1, 6);
     de=distrib(gen);
-    cout<<"Resultat de : "<<de<<endl;
-}
-
-int jeu::getDe() const{
+    cout<<"Resultat dé : "<<de<<endl;
     return de;
 }

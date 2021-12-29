@@ -14,9 +14,7 @@ private:
     int de;
 public:
     jeu();
-    jeu(int de);
-    void(lancer_des(Joueur *joueur));
-    int getDe() const;
+    int lancer_des();
 };
 
 
