@@ -4,10 +4,7 @@
 
 #ifndef MONOPOLY_CHANCE_H
 #define MONOPOLY_CHANCE_H
-
 #include "Case.h"
-#include "../ListeCarte.h"
-#include "../jeu.h"
 
 class Chance : public Case {
 public :

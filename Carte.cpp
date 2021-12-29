@@ -3,6 +3,7 @@
 //
 
 #include "Carte.h"
+#include "Joueur.h"
 
 Carte::Carte(){}
 

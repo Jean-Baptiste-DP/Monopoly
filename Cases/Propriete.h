@@ -5,7 +5,6 @@
 #ifndef MONOPOLY_PROPRIETE_H
 #define MONOPOLY_PROPRIETE_H
 #include "Case.h"
-#include "../Joueur.h"
 
 class Propriete: public Case {
 protected:

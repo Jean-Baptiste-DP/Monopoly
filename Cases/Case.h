@@ -4,14 +4,14 @@
 
 #ifndef MONOPOLY_CASE_H
 #define MONOPOLY_CASE_H
-using namespace std;
-#include <iostream>
+#include "../jeu.h"
 #include "../Joueur.h"
 
 class Case {
 protected:
     string nom;
     Case *suivante;
+    jeu *monJeu;
 public:
     Case();
     Case(string nom_case,Case *case_suivante);
@@ -21,6 +21,8 @@ public:
     Case *getSuivante() const;
     void setSuivante(Case *suivante);
     Case *deplacer(int nb_pas);
+
+    void setMonJeu(jeu *monJeu);
 };
 
 

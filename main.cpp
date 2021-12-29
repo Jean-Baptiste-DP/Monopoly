@@ -5,7 +5,7 @@
 #include "plateau.h"
 
 int main() {
-    Joueur joueur1("toto");
+    Joueur joueur1;
     std::cout << "test1" << std::endl;
     cout<<"Nom joueur1 : "<<joueur1.getNom()<<", Solde joueur 1 :"<<joueur1.getSolde()<<endl;
     joueur1.setSolde(500);

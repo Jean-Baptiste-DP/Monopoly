@@ -6,7 +6,6 @@
 #define MONOPOLY_COMMUNAUTE_H
 
 #include "Case.h"
-#include "../Carte.h"
 
 class Communaute : public Case {
 public :

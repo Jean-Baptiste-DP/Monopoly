@@ -2,13 +2,7 @@
 // Created by Thomas on 27/12/2021.
 //
 
-#include <ctime>
-#include <iostream>
-#include <random>
 #include "ListeCarte.h"
-
-
-
 
 ListeCarte::ListeCarte(){
 

@@ -4,8 +4,7 @@
 
 #ifndef MONOPOLY_JOUEUR_H
 #define MONOPOLY_JOUEUR_H
-using namespace std;
-#include <iostream>
+#include "jeu.h"
 class Case;
 
 class Joueur{
@@ -18,8 +17,10 @@ private:
     int nb_hotel;
     bool en_prison;
     int nb_tour_prison;
+    jeu *monJeu;
 public:
-    Joueur(string Name);
+    Joueur();
+    Joueur(int position,jeu *monJeu);
     void jouer();
     void deplacer(int nb_cases);
     void aller_vers(int numero_case);

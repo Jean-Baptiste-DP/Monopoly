@@ -4,8 +4,9 @@
 
 #ifndef MONOPOLY_LISTECARTE_H
 #define MONOPOLY_LISTECARTE_H
+#include <ctime>
+#include <random>
 #include "Carte.h"
-#include "Joueur.h"
 
 class ListeCarte {
 private:

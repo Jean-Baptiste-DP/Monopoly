@@ -3,17 +3,36 @@
 //
 
 #include "Joueur.h"
+#include "Cases/Case.h"
 #include "plateau.h"
 
-Joueur::Joueur(string Name) {
-    Nom = Name;
+Joueur::Joueur(int position,jeu *monJeu) {
+    cout << "Quel est le nom du Joueur "<<position<<" ?"<<endl;
+    cin >> Nom;
+    solde = 1500;
+    en_prison=false;
+    nb_carte_prison=0;
+    nb_tour_prison=0;
+}
+
+Joueur::Joueur() {
+    Nom = "Toto";
     solde = 1500;
     en_prison=true;
     nb_carte_prison=1;
     nb_tour_prison=1;
 }
 
-void Joueur::jouer(){}
+void Joueur::jouer(){
+    if (en_prison){
+        position->arreterSur(this,0);
+    }else{
+        int de1=monJeu->lancer_des();
+        int de2=monJeu->lancer_des();
+        deplacer(de1+de2);
+        position->arreterSur(this,de1+de2);
+    }
+}
 
 void Joueur::debiter(int montant) {
     solde-=montant;
@@ -24,11 +43,11 @@ void Joueur::crediter(int montant) {
 }
 
 void Joueur::deplacer(int nb_cases) {
-    position->deplacer(nb_cases);
+    position=position->deplacer(nb_cases);
 }
 
 void Joueur::aller_vers(int numero_case) {
-
+    position=(monJeu->getMonPlateau())->aller_vers(numero_case);
 }
 
 int Joueur::getSolde() const {
@@ -76,6 +95,7 @@ void Joueur::achat_maison(){
 }
 
 void Joueur::achat_hotel() {
+    nb_maison-=4;
     nb_hotel+=1;
 }
 

@@ -4,6 +4,7 @@
 
 #ifndef MONOPOLY_PLATEAU_H
 #define MONOPOLY_PLATEAU_H
+#include "jeu.h"
 #include "Cases/Case.h"
 #include "Cases/Taxes.h"
 #include "Cases/Parc.h"
@@ -15,12 +16,12 @@
 #include "Cases/Prison.h"
 #include "Cases/Terrain.h"
 
-
 class plateau {
 private:
     Case* liste_cases[40];
 public:
     plateau();
+    plateau(jeu *monJeu);
     Case* aller_vers(int indice);
 };
 

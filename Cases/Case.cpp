@@ -36,3 +36,7 @@ Case* Case::deplacer(int nb_pas) {
         return suivante->deplacer(nb_pas-1);
     }
 }
+
+void Case::setMonJeu(jeu *monJeu) {
+    Case::monJeu = monJeu;
+}

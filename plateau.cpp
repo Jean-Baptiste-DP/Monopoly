@@ -3,9 +3,8 @@
 //
 
 #include "plateau.h"
-#include "Cases/Parc.h"
 
-plateau::plateau() {
+plateau::plateau(jeu *monJeu) {
     //création de toutes les cases
     Case intermediaire;
     Terrain liste_cases39("Rue de la Paix",400,&intermediaire,50,200,600,1400,1700,2000,200);
@@ -109,10 +108,14 @@ plateau::plateau() {
     //case suivante
     for (int i=0;i<39;i++){
         liste_cases[i]->setSuivante(liste_cases[i+1]);
+        liste_cases[i]->setMonJeu(monJeu);
     }
     liste_cases[39]->setSuivante(liste_cases[0]);
+    liste_cases[39]->setMonJeu(monJeu);
 
 }
+
+plateau::plateau(){}
 
 Case* plateau::aller_vers(int indice) {
     return liste_cases[indice];

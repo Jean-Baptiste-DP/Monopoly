@@ -4,17 +4,26 @@
 
 #ifndef MONOPOLY_JEU_H
 #define MONOPOLY_JEU_H
-
-
-#include "ListeCarte.h"
+using namespace std;
+#include <iostream>
+#include <random>
+class Joueur;
+class plateau;
+class ListeCarte;
 
 class jeu {
 private:
     ListeCarte *paquet;
-    int de;
+    plateau *monPlateau;
+    int nbJoueurs;
+    int joueur_en_cours;
+    Joueur *listeJoueur[];
 public:
     jeu();
     int lancer_des();
+    ListeCarte *getPaquet();
+    plateau *getMonPlateau();
+    void Jouer();
 };
 
 

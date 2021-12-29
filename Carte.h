@@ -4,9 +4,7 @@
 
 #ifndef MONOPOLY_CARTE_H
 #define MONOPOLY_CARTE_H
-using namespace std;
-#include <iostream>
-#include "Joueur.h"
+#include "jeu.h"
 
 class Carte {
 private:

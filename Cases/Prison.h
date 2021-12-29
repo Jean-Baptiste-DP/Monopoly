@@ -4,15 +4,10 @@
 
 #ifndef MONOPOLY_PRISON_H
 #define MONOPOLY_PRISON_H
-
 #include "Case.h"
-#include "../Carte.h"
-#include "../Joueur.h"
-#include "../jeu.h"
 
 class Prison:public Case {
 private:
-    jeu monJeu;
 public:
     Prison(string nom_case, Case *case_suivante);
     void arreterSur(Joueur *joueur, int nombre_cases);
