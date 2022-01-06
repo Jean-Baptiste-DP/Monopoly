@@ -4,7 +4,9 @@
 
 #ifndef MONOPOLY_JOUEUR_H
 #define MONOPOLY_JOUEUR_H
-#include "jeu.h"
+using namespace std;
+#include <iostream>
+class jeu;
 class Case;
 
 class Joueur{
@@ -20,7 +22,7 @@ private:
     jeu *monJeu;
 public:
     Joueur();
-    Joueur(int position,jeu *monJeu);
+    Joueur(int pos,jeu *monJeu1);
     void jouer();
     void deplacer(int nb_cases);
     void aller_vers(int numero_case);

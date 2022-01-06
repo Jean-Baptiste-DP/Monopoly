@@ -64,59 +64,59 @@ plateau::plateau(jeu *monJeu) {
     liste_cases12.setAutreCompanie(&liste_cases12,&liste_cases28);
 
     //Stockage éléments dans liste
-    liste_cases[0]=&liste_cases0;
-    liste_cases[1]=&liste_cases1;
-    liste_cases[2]=&liste_cases2;
-    liste_cases[3]=&liste_cases3;
-    liste_cases[4]=&liste_cases4;
-    liste_cases[5]=&liste_cases5;
-    liste_cases[6]=&liste_cases6;
-    liste_cases[7]=&liste_cases7;
-    liste_cases[8]=&liste_cases8;
-    liste_cases[9]=&liste_cases9;
-    liste_cases[10]=&liste_cases10;
-    liste_cases[11]=&liste_cases11;
-    liste_cases[12]=&liste_cases12;
-    liste_cases[13]=&liste_cases13;
-    liste_cases[14]=&liste_cases14;
-    liste_cases[15]=&liste_cases15;
-    liste_cases[16]=&liste_cases16;
-    liste_cases[17]=&liste_cases17;
-    liste_cases[18]=&liste_cases18;
-    liste_cases[19]=&liste_cases19;
-    liste_cases[20]=&liste_cases20;
-    liste_cases[21]=&liste_cases21;
-    liste_cases[22]=&liste_cases22;
-    liste_cases[23]=&liste_cases23;
-    liste_cases[24]=&liste_cases24;
-    liste_cases[25]=&liste_cases25;
-    liste_cases[26]=&liste_cases26;
-    liste_cases[27]=&liste_cases27;
-    liste_cases[28]=&liste_cases28;
-    liste_cases[29]=&liste_cases29;
-    liste_cases[30]=&liste_cases30;
-    liste_cases[31]=&liste_cases31;
-    liste_cases[32]=&liste_cases32;
-    liste_cases[33]=&liste_cases33;
-    liste_cases[34]=&liste_cases34;
-    liste_cases[35]=&liste_cases35;
-    liste_cases[36]=&liste_cases36;
-    liste_cases[37]=&liste_cases37;
-    liste_cases[38]=&liste_cases38;
-    liste_cases[39]=&liste_cases39;
+    liste_cases[0]=liste_cases0;
+    liste_cases[1]=liste_cases1;
+    liste_cases[2]=liste_cases2;
+    liste_cases[3]=liste_cases3;
+    liste_cases[4]=liste_cases4;
+    liste_cases[5]=liste_cases5;
+    liste_cases[6]=liste_cases6;
+    liste_cases[7]=liste_cases7;
+    liste_cases[8]=liste_cases8;
+    liste_cases[9]=liste_cases9;
+    liste_cases[10]=liste_cases10;
+    liste_cases[11]=liste_cases11;
+    liste_cases[12]=liste_cases12;
+    liste_cases[13]=liste_cases13;
+    liste_cases[14]=liste_cases14;
+    liste_cases[15]=liste_cases15;
+    liste_cases[16]=liste_cases16;
+    liste_cases[17]=liste_cases17;
+    liste_cases[18]=liste_cases18;
+    liste_cases[19]=liste_cases19;
+    liste_cases[20]=liste_cases20;
+    liste_cases[21]=liste_cases21;
+    liste_cases[22]=liste_cases22;
+    liste_cases[23]=liste_cases23;
+    liste_cases[24]=liste_cases24;
+    liste_cases[25]=liste_cases25;
+    liste_cases[26]=liste_cases26;
+    liste_cases[27]=liste_cases27;
+    liste_cases[28]=liste_cases28;
+    liste_cases[29]=liste_cases29;
+    liste_cases[30]=liste_cases30;
+    liste_cases[31]=liste_cases31;
+    liste_cases[32]=liste_cases32;
+    liste_cases[33]=liste_cases33;
+    liste_cases[34]=liste_cases34;
+    liste_cases[35]=liste_cases35;
+    liste_cases[36]=liste_cases36;
+    liste_cases[37]=liste_cases37;
+    liste_cases[38]=liste_cases38;
+    liste_cases[39]=liste_cases39;
 
     //case suivante
     for (int i=0;i<39;i++){
-        liste_cases[i]->setSuivante(liste_cases[i+1]);
-        liste_cases[i]->setMonJeu(monJeu);
+        liste_cases[i].setSuivante(&liste_cases[i+1]);
+        liste_cases[i].setMonJeu(monJeu);
     }
-    liste_cases[39]->setSuivante(liste_cases[0]);
-    liste_cases[39]->setMonJeu(monJeu);
+    liste_cases[39].setSuivante(&liste_cases[0]);
+    liste_cases[39].setMonJeu(monJeu);
 
 }
 
 plateau::plateau(){}
 
 Case* plateau::aller_vers(int indice) {
-    return liste_cases[indice];
+    return &liste_cases[indice];
 }

@@ -29,7 +29,7 @@ void Case::setSuivante(Case *suivante) {
     Case::suivante = suivante;
 }
 
-Case* Case::deplacer(int nb_pas) {
+Case *Case::deplacer(int nb_pas) {
     if (nb_pas<=1){
         return suivante;
     }else{

@@ -6,13 +6,16 @@
 #include "Cases/Case.h"
 #include "plateau.h"
 
-Joueur::Joueur(int position,jeu *monJeu) {
-    cout << "Quel est le nom du Joueur "<<position<<" ?"<<endl;
+Joueur::Joueur(int pos,jeu *monJeu1) {
+    cout << "Quel est le nom du Joueur "<<pos<<" ?"<<endl;
     cin >> Nom;
     solde = 1500;
     en_prison=false;
     nb_carte_prison=0;
     nb_tour_prison=0;
+    monJeu=monJeu1;
+    position=(monJeu->getMonPlateau())->aller_vers(0);
+    cout<<"Position du Joueur : "<<position->getNom()<<endl;
 }
 
 Joueur::Joueur() {
@@ -31,6 +34,7 @@ void Joueur::jouer(){
         int de1=monJeu->lancer_des();
         int de2=monJeu->lancer_des();
         deplacer(de1+de2);
+        cout<<"Position du Joueur : "<<position->getNom()<<endl;
         position->arreterSur(this,de1+de2);
     }
 }

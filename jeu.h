@@ -7,7 +7,7 @@
 using namespace std;
 #include <iostream>
 #include <random>
-class Joueur;
+#include "Joueur.h"
 class plateau;
 class ListeCarte;
 
@@ -17,7 +17,7 @@ private:
     plateau *monPlateau;
     int nbJoueurs;
     int joueur_en_cours;
-    Joueur *listeJoueur[];
+    Joueur listeJoueur[8];
 public:
     jeu();
     int lancer_des();
