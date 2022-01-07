@@ -6,6 +6,7 @@
 #define MONOPOLY_JOUEUR_H
 using namespace std;
 #include <iostream>
+
 class jeu;
 class Case;
 
@@ -38,6 +39,7 @@ public:
     void setPrison(bool en_prison);
     int getNbTourPrison() const;
     void ajout_tour_prison();
+    void remettre_tour_prison_a_zero();
     void achat_maison();
     void achat_hotel();
     bool operator==(Joueur autrejoueur);

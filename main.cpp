@@ -5,6 +5,31 @@
 #include "plateau.h"
 
 int main() {
+    /*
+    Joueur joueur1;
+    cout<<"Nom joueur1 : "<<joueur1.getNom()<<", Solde joueur 1 :"<<joueur1.getSolde()<<endl;
+    joueur1.setSolde(500);
+    cout<<"Nouveau solde "<<joueur1.getNom()<<" : "<<joueur1.getSolde()<<endl;
+    joueur1.crediter(500);
+    cout<<"Nouveau solde "<<joueur1.getNom()<<" apres credit : "<<joueur1.getSolde()<<endl;
+    joueur1.debiter(100);
+    cout<<"Nouveau solde "<<joueur1.getNom()<<" apres debit : "<<joueur1.getSolde()<<endl;
+
+    std::cout << "\ntest2" << std::endl;
+    Case case_finale;
+    Case avant("champ élysées",case_finale);
+    Prison prison("Prison",&case_finale);
+    Depart debut("debut",&prison);
+    case_finale.setSuivante(&debut);
+
+    std::cout << "\ntest4" << std::endl;
+    prison.arreterSur(&joueur1, 0);
+    std::cout << "test5" << std::endl;
+    */
+    //cout<<joueur1.getNbCartePrison()<<endl;
+    //Carte Liberer_prison (1, 0, 0, 1, 0, 0, "", "Carte Liberer de prison");
+    //Liberer_prison.action_carte(&joueur1);
+    //cout<<"\n"<<joueur1.getNbCartePrison()<<endl;
 
     /*
     cout<<"Debut : "<<debut.getNom()<<endl;
@@ -32,7 +57,10 @@ int main() {
     cout<<"d:"<<de1.getDe()<<endl;
     cout<<"e:"<<de2.getDe()<<endl;
     */
+
+
     cout << "Test de jeu"<<endl;
     jeu monJeu;
     monJeu.Jouer();
+
 }

@@ -21,12 +21,27 @@ Joueur::Joueur(int pos,jeu *monJeu1) {
 Joueur::Joueur() {
     Nom = "Toto";
     solde = 1500;
-    en_prison=true;
+    en_prison=false;
     nb_carte_prison=1;
     nb_tour_prison=1;
 }
 
 void Joueur::jouer(){
+    cout << "Position du Joueur1 : " << position->getNom() << endl;
+    cout<<"Test tour de prison : "<<Nom<<endl;
+    cout<<en_prison<<endl;
+    if (en_prison){
+        cout<<"TEST"<<endl;
+        position->arreterSur(this,0);
+        if (en_prison="False"){
+            position->arreterSur(this, 0);
+        }
+    }else {
+        deplacer(10);
+        cout << "Position du Joueur : " << position->getNom() << endl;
+        position->arreterSur(this, 0);
+    }
+    /*
     cout<<"Tour de : "<<Nom<<endl;
     if (en_prison){
         position->arreterSur(this,0);
@@ -37,6 +52,7 @@ void Joueur::jouer(){
         cout<<"Position du Joueur : "<<position->getNom()<<endl;
         position->arreterSur(this,de1+de2);
     }
+    */
 }
 
 void Joueur::debiter(int montant) {
@@ -94,7 +110,9 @@ int Joueur::getNbTourPrison() const{
 void Joueur::ajout_tour_prison() {
     Joueur::nb_tour_prison+=1;
 }
-
+void Joueur::remettre_tour_prison_a_zero(){
+    Joueur::nb_tour_prison=0;
+}
 void Joueur::achat_maison(){
     nb_maison+=1;
 }

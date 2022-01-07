@@ -14,7 +14,7 @@ Propriete::Propriete() {}
 
 void Propriete::acheter(Joueur *joueur) {
     string reponse;
-    cout<<"Vous êtes arrêter sur"<<nom<<". Ce terrain est disponible vous pouvez l'acheter pour "<<prix_achat<<endl;
+    cout<<"Vous êtes arrêter sur "<<nom<<". Ce terrain est disponible vous pouvez l'acheter pour "<<prix_achat<<endl;
     cout<<"Merci de répondre 'oui' ou 'non' en fonction de si vous souhaitez l'acheter ou non"<<endl;
     cin >> reponse;
     if(reponse=="oui"){
