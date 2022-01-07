@@ -10,7 +10,7 @@ class Parc:public Case{
 private:
 
 public:
-    Parc(Case *case_suivante);
+    Parc();
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

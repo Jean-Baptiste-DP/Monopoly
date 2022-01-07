@@ -11,7 +11,8 @@ private:
     Gare* autres_gares[3];
     void setAutreGares(Gare* g1,Gare* g2,Gare* g3);
 public:
-    Gare(string nom, int prix_achat, Case *case_suivante);
+    Gare(string nom, int prix_achat);
+    Gare();
     void arreterSur(Joueur *joueur, int nombre_cases);
     void setAutreGares(Gare* moi,Gare* g1,Gare* g2,Gare* g3);
 };

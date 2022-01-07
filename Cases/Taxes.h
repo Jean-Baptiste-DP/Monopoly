@@ -10,7 +10,8 @@ class Taxes: public Case {
 private:
     int prix;
 public:
-    Taxes(string nom, Case *case_suivante, int prix);
+    Taxes(string nom, int prix);
+    Taxes();
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

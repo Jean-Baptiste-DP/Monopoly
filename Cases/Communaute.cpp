@@ -4,7 +4,9 @@
 
 #include "Communaute.h"
 
-Communaute::Communaute(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {}
+Communaute::Communaute(string nom_case):Case(nom_case) {}
+
+Communaute::Communaute() {}
 
 void Communaute::arreterSur(Joueur *joueur, int nombre_cases){
     cout<<"Vous etes sur "<<nom<<endl;

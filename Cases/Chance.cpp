@@ -4,7 +4,9 @@
 
 #include "Chance.h"
 
-Chance::Chance(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {}
+Chance::Chance(string nom_case):Case(nom_case) {}
+
+Chance::Chance() {}
 
 void Chance::arreterSur(Joueur *joueur, int nombre_cases){
     cout<<"Vous etes sur "<<nom<<endl;

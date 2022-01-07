@@ -11,7 +11,8 @@ private:
     Compagnie* autres_compagnie;
     void setAutreCompagnie(Compagnie* g1);
 public:
-    Compagnie(string nom, int prix_achat, Case *case_suivante);
+    Compagnie(string nom, int prix_achat);
+    Compagnie();
     void arreterSur(Joueur *joueur, int nombre_cases);
     void setAutreCompanie(Compagnie* moi,Compagnie* g1);
 };

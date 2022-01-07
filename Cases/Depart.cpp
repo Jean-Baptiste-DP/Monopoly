@@ -4,10 +4,9 @@
 
 #include "Depart.h"
 
-Depart::Depart(string nom_case,Case *case_suivante):Case(nom_case, case_suivante) {
-    nom=nom_case;
-    suivante=case_suivante;
-}
+Depart::Depart(string nom_case):Case(nom_case) {}
+
+Depart::Depart() {}
 
 void Depart::arreterSur(Joueur *joueur, int nombre_cases){
     cout<<"Vous etes sur "<<nom<<endl;

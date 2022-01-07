@@ -6,12 +6,13 @@
 
 Case::Case() {}
 
-Case::Case(string nom_case,Case *case_suivante) {
+Case::Case(string nom_case) {
     nom=nom_case;
-    suivante=case_suivante;
 }
 
-void Case::arreterSur(Joueur *joueur, int nombre_cases) {}
+void Case::arreterSur(Joueur *joueur, int nombre_cases) {
+    cout<<"il ne faut pas effectuer cette fonction"<<endl;
+}
 
 const string &Case::getNom() const {
     return nom;

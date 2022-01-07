@@ -4,8 +4,10 @@
 
 #include "Prison.h"
 
-Prison::Prison(string nom_case, Case *case_suivante):Case(nom_case, case_suivante) {
+Prison::Prison(string nom_case):Case(nom_case) {
 }
+
+Prison::Prison() {}
 
 void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
     cout<<"Vous etes sur "<<nom<<endl;

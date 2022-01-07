@@ -9,7 +9,8 @@
 class Prison:public Case {
 private:
 public:
-    Prison(string nom_case, Case *case_suivante);
+    Prison(string nom_case);
+    Prison();
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

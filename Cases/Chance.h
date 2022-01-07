@@ -8,7 +8,8 @@
 
 class Chance : public Case {
 public :
-    Chance(string nom_case, Case *case_suivante);
+    Chance();
+    Chance(string nom_case);
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

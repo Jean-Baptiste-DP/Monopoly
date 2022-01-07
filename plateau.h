@@ -18,7 +18,17 @@
 
 class plateau {
 private:
-    Case liste_cases[40];
+    Chance lesChances[3];
+    Communaute lesCommunautes[3];
+    Compagnie lesCompagnies[2];
+    Depart leDepart;
+    Gare lesGares[4];
+    Parc leParc;
+    Prison lesPrisons[2];
+    Taxes lesTaxes[2];
+    Terrain lesTerrains[22];
+
+    Case* liste_cases[40];
 public:
     plateau();
     plateau(jeu *monJeu);

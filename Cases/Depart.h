@@ -9,7 +9,8 @@
 
 class Depart:public Case {
 public:
-    Depart(string nom_case,Case *case_suivante);
+    Depart(string nom_case);
+    Depart();
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

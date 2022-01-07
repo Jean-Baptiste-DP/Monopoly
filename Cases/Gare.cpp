@@ -4,7 +4,9 @@
 
 #include "Gare.h"
 
-Gare::Gare(string nom, int prix_achat, Case *case_suivante): Propriete(nom,prix_achat,case_suivante) {}
+Gare::Gare(string nom, int prix_achat): Propriete(nom,prix_achat) {}
+
+Gare::Gare() {}
 
 void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
     cout<<"Vous etes sur "<<nom<<endl;

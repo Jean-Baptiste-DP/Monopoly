@@ -14,8 +14,8 @@ protected:
     jeu *monJeu;
 public:
     Case();
-    Case(string nom_case,Case *case_suivante);
-    virtual void arreterSur(Joueur *joueur, int nombre_cases);
+    Case(string nom_case);
+    virtual void arreterSur(Joueur *joueur, int nombre_cases)=0;
     const string &getNom() const;
     void setNom(const string &nom);
     Case *getSuivante() const;

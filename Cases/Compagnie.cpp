@@ -4,7 +4,9 @@
 
 #include "Compagnie.h"
 
-Compagnie::Compagnie(string nom, int prix_achat, Case *case_suivante): Propriete(nom,prix_achat,case_suivante) {}
+Compagnie::Compagnie(string nom, int prix_achat): Propriete(nom,prix_achat) {}
+
+Compagnie::Compagnie() {}
 
 void Compagnie::arreterSur(Joueur *joueur, int nombre_cases) {
     cout<<"Vous etes sur "<<nom<<endl;

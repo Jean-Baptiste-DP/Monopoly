@@ -9,7 +9,8 @@
 
 class Communaute : public Case {
 public :
-    Communaute(string nom_case,Case *case_suivante);
+    Communaute(string nom_case);
+    Communaute();
     void arreterSur(Joueur *joueur, int nombre_cases);
 };
 

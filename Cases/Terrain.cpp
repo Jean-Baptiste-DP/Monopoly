@@ -4,7 +4,7 @@
 
 #include "Terrain.h"
 
-Terrain::Terrain(string nom, int prix_achat, Case *case_suivante,int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison):Propriete(nom,prix_achat,case_suivante){
+Terrain::Terrain(string nom, int prix_achat,int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison):Propriete(nom,prix_achat){
     loyer[0]=terrain_nu;
     loyer[1]=maison1;
     loyer[2]=maison2;
@@ -14,6 +14,8 @@ Terrain::Terrain(string nom, int prix_achat, Case *case_suivante,int terrain_nu,
     prix_maison=p_maison;
     nb_maison=0;
 }
+
+Terrain::Terrain() {}
 
 void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
     cout<<"Vous etes sur "<<nom<<endl;
