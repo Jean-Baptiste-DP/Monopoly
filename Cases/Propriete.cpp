@@ -4,6 +4,7 @@
 
 #include "Propriete.h"
 
+
 Propriete::Propriete(string nom,int prix_achat):Case(nom){
     prix_achat=prix_achat;
     prix_hypotheque=prix_achat/2;
@@ -14,14 +15,15 @@ Propriete::Propriete() {}
 
 void Propriete::acheter(Joueur *joueur) {
     string reponse;
-    cout<<"Vous êtes arrêter sur "<<nom<<". Ce terrain est disponible vous pouvez l'acheter pour "<<prix_achat<<endl;
+    cout<<"Vous êtes arrêté sur "<<nom<<". Ce terrain est disponible vous pouvez l'acheter pour "<<prix_achat<<" euros."<<endl;
     cout<<"Merci de répondre 'oui' ou 'non' en fonction de si vous souhaitez l'acheter ou non"<<endl;
     cin >> reponse;
     if(reponse=="oui"){
         joueur->debiter(prix_achat);
+        cout << "Votre nouveau solde est : "<<joueur->getSolde() <<" euros."<< endl;
         proprietaire=joueur;
         achete=true;
-        cout<<"Achat effectué. Fin de tour."<<endl;
+        cout<<"Achat effectué."<<endl;
     }
     else{
         cout<<"Fin de tour";

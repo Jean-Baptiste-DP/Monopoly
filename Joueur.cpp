@@ -13,6 +13,7 @@ Joueur::Joueur(int pos,jeu *monJeu1) {
     en_prison=false;
     nb_carte_prison=0;
     nb_tour_prison=0;
+    nb_double=0;
     monJeu=monJeu1;
     position=(monJeu->getMonPlateau())->aller_vers(0);
     cout<<"Position du Joueur : "<<position->getNom()<<endl;
@@ -27,15 +28,30 @@ Joueur::Joueur() {
 }
 
 void Joueur::jouer(){
-    cout<<"Tour de : "<<Nom<<endl;
+    cout<<"\nTour de : "<<Nom<<" Nombre de double en cours : "<<nb_double<<endl;
     if (en_prison){
         position->arreterSur(this,0);
     }else{
         int de1=monJeu->lancer_des();
         int de2=monJeu->lancer_des();
-        deplacer(de1+de2);
-        cout<<"Position du Joueur : "<<position->getNom()<<endl;
-        position->arreterSur(this,de1+de2);
+        if (de1==de2){
+            nb_double+=1;
+            if (nb_double<3){
+                deplacer(de1+de2);
+                cout<<"Position du Joueur : "<<position->getNom()<<endl;
+                position->arreterSur(this,de1+de2);
+            }else {
+                nb_double=0;
+                aller_vers(10);
+                cout<<"Vous avez fait un double. Direction la "<<position->getNom()<<endl;
+                setPrison(true);
+            }
+        }else{
+            nb_double=0;
+            deplacer(de1+de2);
+            cout<<"Position du Joueur : "<<position->getNom()<<endl;
+            position->arreterSur(this,de1+de2);
+        }
     }
 }
 
