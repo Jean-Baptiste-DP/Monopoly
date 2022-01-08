@@ -14,7 +14,6 @@ public:
     Prison(string nom_case);
     Prison();
     void arreterSur(Joueur *joueur, int nombre_cases);
-    int getNbDeDouble() const;
 };
 
 

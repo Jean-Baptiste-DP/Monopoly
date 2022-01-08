@@ -27,21 +27,6 @@ Joueur::Joueur() {
 }
 
 void Joueur::jouer(){
-    cout << "Position du Joueur1 : " << position->getNom() << endl;
-    cout<<"Test tour de prison : "<<Nom<<endl;
-    cout<<en_prison<<endl;
-    if (en_prison){
-        cout<<"TEST"<<endl;
-        position->arreterSur(this,0);
-        if (en_prison="False"){
-            position->arreterSur(this, 0);
-        }
-    }else {
-        deplacer(10);
-        cout << "Position du Joueur : " << position->getNom() << endl;
-        position->arreterSur(this, 0);
-    }
-    /*
     cout<<"Tour de : "<<Nom<<endl;
     if (en_prison){
         position->arreterSur(this,0);
@@ -52,7 +37,6 @@ void Joueur::jouer(){
         cout<<"Position du Joueur : "<<position->getNom()<<endl;
         position->arreterSur(this,de1+de2);
     }
-    */
 }
 
 void Joueur::debiter(int montant) {
@@ -66,7 +50,9 @@ void Joueur::crediter(int montant) {
 void Joueur::deplacer(int nb_cases) {
     position=position->deplacer(nb_cases);
 }
-
+void Joueur::executer_case(int nb_des) {
+    position->arreterSur(this,0);
+}
 void Joueur::aller_vers(int numero_case) {
     position=(monJeu->getMonPlateau())->aller_vers(numero_case);
 }
