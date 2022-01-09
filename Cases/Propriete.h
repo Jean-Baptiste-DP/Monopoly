@@ -13,7 +13,7 @@ protected:
     bool achete;
     Joueur *proprietaire;
 public:
-    Propriete(string nom, int prix_achat);
+    Propriete(string nom, int prix_ach);
     Propriete();
     void acheter(Joueur *joueur);
 };

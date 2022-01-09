@@ -5,13 +5,15 @@
 #include "Propriete.h"
 
 
-Propriete::Propriete(string nom,int prix_achat):Case(nom){
-    prix_achat=prix_achat;
+Propriete::Propriete(string nom,int prix_ach):Case(nom){
+    prix_achat=prix_ach;
     prix_hypotheque=prix_achat/2;
     achete=false;
 }
 
-Propriete::Propriete() {}
+Propriete::Propriete() {
+    prix_achat=99999;
+}
 
 void Propriete::acheter(Joueur *joueur) {
     string reponse;
