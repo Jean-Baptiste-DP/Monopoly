@@ -9,7 +9,7 @@ Chance::Chance(string nom_case):Case(nom_case) {}
 Chance::Chance() {}
 
 void Chance::arreterSur(Joueur *joueur, int nombre_cases){
-    cout<<"Vous etes sur "<<nom<<endl;
+
     //paquet->piocher_carte_chance(joueur);
 
 }

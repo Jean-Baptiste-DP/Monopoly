@@ -9,5 +9,5 @@ Parc::Parc(): Case("Parc Gratuit") {
 }
 
 void Parc::arreterSur(Joueur *joueur, int nombre_cases) {
-    cout<<"Vous etes sur "<<nom<<endl;
+
 }

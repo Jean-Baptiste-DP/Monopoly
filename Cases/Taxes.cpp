@@ -11,6 +11,5 @@ Taxes::Taxes(string nom,int prix): Case(nom) {
 Taxes::Taxes(){}
 
 void Taxes::arreterSur(Joueur *joueur, int nombre_cases) {
-    cout<<"Vous etes sur "<<nom<<endl;
     joueur->debiter(prix);
 }

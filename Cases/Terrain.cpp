@@ -18,15 +18,14 @@ Terrain::Terrain(string nom, int prix_achat,int terrain_nu,int maison1,int maiso
 Terrain::Terrain() {}
 
 void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
-    cout<<"Vous etes sur "<<nom<<endl;
     if(achete){
         if(joueur==proprietaire){
-            cout<<"Vous êtes sur "<<nom<<": case dont vous êtes propriétaire. Fin de tour."<<endl;
+            cout<<"Vous êtes propriétaire. Fin de tour."<<endl;
         }
         else{
             joueur->debiter(loyer[nb_maison]);
             proprietaire->crediter(loyer[nb_maison]);
-            cout<<"Vous êtes sur "<<nom<<". Vous devez "<<loyer[nb_maison]<<"à"<<proprietaire->getNom()<<endl;
+            cout<<"Vous devez "<<loyer[nb_maison]<<"à"<<proprietaire->getNom()<<endl;
             cout<<"Fin de tour"<<endl;
         }
     }

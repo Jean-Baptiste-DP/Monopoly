@@ -9,7 +9,7 @@ Communaute::Communaute(string nom_case):Case(nom_case) {}
 Communaute::Communaute() {}
 
 void Communaute::arreterSur(Joueur *joueur, int nombre_cases){
-    cout<<"Vous etes sur "<<nom<<endl;
+
     //paquet->piocher_carte_chance(joueur);
 }
 

@@ -9,10 +9,9 @@ Gare::Gare(string nom, int prix_achat): Propriete(nom,prix_achat) {}
 Gare::Gare() {}
 
 void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
-    cout<<"Vous etes sur "<<nom<<endl;
     if(achete){
         if(joueur==proprietaire){
-            cout<<"Vous êtes sur "<<nom<<": case dont vous êtes propriétaire. Fin de tour."<<endl;
+            cout<<"Vous êtes propriétaire. Fin de tour."<<endl;
         }
         else{
             int nb_gare=1;
@@ -33,7 +32,7 @@ void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
             }
             joueur->debiter(prix);
             proprietaire->crediter(prix);
-            cout<<"Vous êtes sur "<<nom<<". Vous devez "<<prix<<"à"<<proprietaire->getNom()<<endl;
+            cout<<"Vous devez "<<prix<<"à"<<proprietaire->getNom()<<endl;
             cout<<"Fin de tour"<<endl;
         }
     }
