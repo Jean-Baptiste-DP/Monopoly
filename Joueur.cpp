@@ -38,19 +38,24 @@ void Joueur::jouer(){
             nb_double+=1;
             if (nb_double<3){
                 deplacer(de1+de2);
+                cout<<"Solde du Joueur : "<<solde<<endl;
                 cout<<"Position du Joueur : "<<position->getNom()<<endl;
                 position->arreterSur(this,de1+de2);
-            }else {
+            }
+            else {
                 nb_double=0;
                 aller_vers(10);
+                cout<<"Solde du Joueur : "<<solde<<endl;
                 cout<<"Vous avez fait un double. Direction la "<<position->getNom()<<endl;
                 setPrison(true);
             }
         }else{
             nb_double=0;
             deplacer(de1+de2);
+            cout<<"Solde du Joueur : "<<solde<<endl;
             cout<<"Position du Joueur : "<<position->getNom()<<endl;
             position->arreterSur(this,de1+de2);
+
         }
     }
 }
