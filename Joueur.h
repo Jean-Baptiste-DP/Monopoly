@@ -20,7 +20,6 @@ private:
     int nb_hotel;
     bool en_prison;
     int nb_tour_prison;
-    int nb_double;
     jeu *monJeu;
 public:
     Joueur();

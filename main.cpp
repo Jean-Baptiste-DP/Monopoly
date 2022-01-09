@@ -5,6 +5,7 @@
 #include "plateau.h"
 
 int main() {
+
     /*
     Joueur joueur1;
     cout<<"Nom joueur1 : "<<joueur1.getNom()<<", Solde joueur 1 :"<<joueur1.getSolde()<<endl;
@@ -57,7 +58,6 @@ int main() {
     cout<<"d:"<<de1.getDe()<<endl;
     cout<<"e:"<<de2.getDe()<<endl;
     */
-
 
     cout << "Test de jeu"<<endl;
     jeu monJeu;

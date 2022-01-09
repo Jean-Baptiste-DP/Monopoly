@@ -21,12 +21,16 @@ jeu::jeu(){
 }
 
 
-int jeu::lancer_des(){
+int jeu::lancer_des(int n){
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> distrib(1, 6);
     int de=distrib(gen);
-    cout<<"Resultat dé : "<<de<<endl;
+    if (n==0){
+        cout<<"Résultat dé : "<<de<<endl;
+    }else{
+        cout<<"Dé "<<n<<" : "<<de<<endl;
+    }
     return de;
 }
 

@@ -13,10 +13,8 @@ Joueur::Joueur(int pos,jeu *monJeu1) {
     en_prison=false;
     nb_carte_prison=0;
     nb_tour_prison=0;
-    nb_double=0;
     monJeu=monJeu1;
     position=(monJeu->getMonPlateau())->aller_vers(0);
-    cout<<"Position du Joueur : "<<position->getNom()<<endl;
 }
 
 Joueur::Joueur() {
@@ -28,34 +26,42 @@ Joueur::Joueur() {
 }
 
 void Joueur::jouer(){
-    cout<<"\nTour de : "<<Nom<<" Nombre de double en cours : "<<nb_double<<endl;
-    if (en_prison){
-        position->arreterSur(this,0);
-    }else{
-        int de1=monJeu->lancer_des();
-        int de2=monJeu->lancer_des();
-        if (de1==de2){
-            nb_double+=1;
-            if (nb_double<3){
-                deplacer(de1+de2);
-                cout<<"Solde du Joueur : "<<solde<<endl;
-                cout<<"Position du Joueur : "<<position->getNom()<<endl;
-                position->arreterSur(this,de1+de2);
-            }
-            else {
+    cout<<"-------------------------"<<endl;
+    cout<<"Tour de : "<<Nom<<endl;
+    cout<<"Solde du Joueur : "<<solde<<endl;
+    cout<<"Position initiale : "<<position->getNom()<<endl;
+    cout<<"-------------------------"<<endl<<endl;
+
+    bool continuer_jouer=true;
+    int nb_double=0;
+    while (continuer_jouer){
+        continuer_jouer=false;
+        if(en_prison){
+            position->arreterSur(this,0);
+            if(not en_prison){
                 nb_double=0;
-                aller_vers(10);
-                cout<<"Solde du Joueur : "<<solde<<endl;
-                cout<<"Vous avez fait un double. Direction la "<<position->getNom()<<endl;
-                setPrison(true);
+                continuer_jouer=true;
             }
         }else{
-            nb_double=0;
-            deplacer(de1+de2);
-            cout<<"Solde du Joueur : "<<solde<<endl;
-            cout<<"Position du Joueur : "<<position->getNom()<<endl;
-            position->arreterSur(this,de1+de2);
-
+            cout<<"Lancé des dés : "<<endl;
+            int de1=monJeu->lancer_des(1);
+            int de2=monJeu->lancer_des(2);
+            if(de1==de2){
+                continuer_jouer= true;
+                if(nb_double>=2){
+                    cout<<"Vous avez fait 3 doubles, allez en prison !"<<endl;
+                    aller_vers(10);
+                    setPrison(true);
+                    nb_double=0;
+                }else{
+                    cout<<"Vous êtes arrivés sur : "<<position->getNom()<<endl;
+                    position->arreterSur(this,de1+de2);
+                    cout<<"Vous avez fait un double, vous pouvez rejouer"<<endl;
+                    nb_double+=1;}
+            }else{
+                cout<<"Vous êtes arrivés sur : "<<position->getNom()<<endl;
+                position->arreterSur(this,de1+de2);
+            }
         }
     }
 }

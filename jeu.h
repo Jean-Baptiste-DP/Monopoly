@@ -20,7 +20,7 @@ private:
     Joueur listeJoueur[8];
 public:
     jeu();
-    int lancer_des();
+    int lancer_des(int n=0);
     ListeCarte *getPaquet();
     plateau *getMonPlateau();
     void Jouer();
