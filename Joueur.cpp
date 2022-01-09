@@ -26,7 +26,7 @@ Joueur::Joueur() {
 }
 
 void Joueur::jouer(){
-    cout<<"-------------------------"<<endl;
+    cout<<endl<<"-------------------------"<<endl;
     cout<<"Tour de : "<<Nom<<endl;
     cout<<"Solde du Joueur : "<<solde<<endl;
     cout<<"Position initiale : "<<position->getNom()<<endl;
