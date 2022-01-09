@@ -10,7 +10,7 @@ Chance::Chance() {}
 
 void Chance::arreterSur(Joueur *joueur, int nombre_cases){
 
-    //paquet->piocher_carte_chance(joueur);
+    monJeu->getPaquet()->piocher_carte_chance(joueur);
 
 }
 

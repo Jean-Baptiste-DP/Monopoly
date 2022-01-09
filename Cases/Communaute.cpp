@@ -9,8 +9,7 @@ Communaute::Communaute(string nom_case):Case(nom_case) {}
 Communaute::Communaute() {}
 
 void Communaute::arreterSur(Joueur *joueur, int nombre_cases){
-
-    //paquet->piocher_carte_chance(joueur);
+    monJeu->getPaquet()->piocher_carte_communaute(joueur);
 }
 
 //suivre les instructions de la carte et la remettre face cachée en-dessous de la pile.

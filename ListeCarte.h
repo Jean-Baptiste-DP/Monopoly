@@ -10,8 +10,8 @@
 
 class ListeCarte {
 private:
-    Carte* liste_carte_chance[16];
-    Carte* liste_carte_communaute[14];
+    Carte liste_carte_chance[16];
+    Carte liste_carte_communaute[14];
 
 public:
     ListeCarte();

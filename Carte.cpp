@@ -3,11 +3,12 @@
 //
 
 #include "Carte.h"
-#include "Joueur.h"
+
+#include "jeu.h"
 
 Carte::Carte(){}
 
-Carte::Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, string action_lieu, string explication){
+Carte::Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, int action_lieu, string explication){
     numero=numero_carte;
     deplacement=action_deplacement;
     argent=action_argent;
@@ -50,8 +51,8 @@ void Carte::action_carte(Joueur *joueur){
     }
 
     //Aller à une case précise
-    if(lieu!=""){
-        //joueur->setPosition(lieu);
+    if(lieu!=-1){
+        joueur->aller_vers(lieu);
     }
 
     //Carte impôt maison et hotel

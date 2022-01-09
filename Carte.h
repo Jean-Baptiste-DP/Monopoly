@@ -4,7 +4,12 @@
 
 #ifndef MONOPOLY_CARTE_H
 #define MONOPOLY_CARTE_H
-#include "jeu.h"
+
+
+#include <iostream>
+using namespace std;
+class jeu;
+class Joueur;
 
 class Carte {
 private:
@@ -14,12 +19,12 @@ private:
     int prison;
     int ipascher;
     int icher;
-    string lieu;
+    int lieu;
     string texte;
 
 public:
     Carte();
-    Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, string action_lieu, string explication);
+    Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, int action_lieu, string explication);
 
     int getNumero() const;
 

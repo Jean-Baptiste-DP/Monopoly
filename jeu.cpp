@@ -4,7 +4,6 @@
 #include "jeu.h"
 #include "Cases/Case.h"
 #include "plateau.h"
-#include "ListeCarte.h"
 
 jeu::jeu(){
     paquet = new ListeCarte();

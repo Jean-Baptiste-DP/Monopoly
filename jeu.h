@@ -9,7 +9,7 @@ using namespace std;
 #include <random>
 #include "Joueur.h"
 class plateau;
-class ListeCarte;
+#include "ListeCarte.h"
 
 class jeu {
 private:

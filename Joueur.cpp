@@ -59,6 +59,7 @@ void Joueur::jouer(){
                     cout<<"Vous avez fait un double, vous pouvez rejouer"<<endl;
                     nb_double+=1;}
             }else{
+                deplacer(de1+de2);
                 cout<<"Vous êtes arrivés sur : "<<position->getNom()<<endl;
                 position->arreterSur(this,de1+de2);
             }
