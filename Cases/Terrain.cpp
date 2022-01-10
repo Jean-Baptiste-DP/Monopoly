@@ -20,13 +20,12 @@ Terrain::Terrain() {}
 void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
     if(achete){
         if(joueur==proprietaire){
-            cout<<"Vous êtes propriétaire. Fin de tour."<<endl;
+            cout<<"Vous êtes propriétaire."<<endl;
         }
         else{
             joueur->debiter(loyer[nb_maison]);
             proprietaire->crediter(loyer[nb_maison]);
-            cout<<"Vous devez "<<loyer[nb_maison]<<"à"<<proprietaire->getNom()<<endl;
-            cout<<"Fin de tour"<<endl;
+            cout<<"Vous devez "<<loyer[nb_maison]<<"€ à "<<proprietaire->getNom()<<endl;
         }
     }
     else{

@@ -35,7 +35,7 @@ void Carte::action_carte(Joueur *joueur){
 
     //Reculer de 3 cases
     if (deplacement!=0){
-        joueur->deplacer(45);
+        joueur->deplacer(37);
         joueur->debiter(200);
     }
 
@@ -58,11 +58,11 @@ void Carte::action_carte(Joueur *joueur){
     //Carte impôt maison et hotel
 
     if(ipascher=!0){
-        joueur->debiter(25*joueur->getNbMaison()+ 100*joueur->getNbHotel());
+        joueur->debiter((25*joueur->getNbMaison())+ (100*joueur->getNbHotel()));
     }
 
     if(icher!=0){
-        joueur->debiter(40*joueur->getNbMaison()+ 115*joueur->getNbHotel());
+        joueur->debiter((40*joueur->getNbMaison())+ (115*joueur->getNbHotel()));
     }
 
 

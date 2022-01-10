@@ -11,7 +11,7 @@ Compagnie::Compagnie() {}
 void Compagnie::arreterSur(Joueur *joueur, int nombre_cases) {
     if(achete){
         if(joueur==proprietaire){
-            cout<<"Vous êtes propriétaire. Fin de tour."<<endl;
+            cout<<"Vous êtes propriétaire."<<endl;
         }
         else{
             int nb_compagnie=1;
@@ -26,8 +26,7 @@ void Compagnie::arreterSur(Joueur *joueur, int nombre_cases) {
             }
             joueur->debiter(prix);
             proprietaire->crediter(prix);
-            cout<<"Vous devez "<<prix<<"à"<<proprietaire->getNom()<<endl;
-            cout<<"Fin de tour"<<endl;
+            cout<<"Vous devez "<<prix<<"€ à "<<proprietaire->getNom()<<endl;
         }
     }
     else{

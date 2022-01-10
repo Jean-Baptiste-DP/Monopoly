@@ -15,6 +15,8 @@ Joueur::Joueur(int pos,jeu *monJeu1) {
     nb_tour_prison=0;
     monJeu=monJeu1;
     position=(monJeu->getMonPlateau())->aller_vers(0);
+    nb_hotel=0;
+    nb_maison=0;
 }
 
 Joueur::Joueur() {
@@ -23,6 +25,8 @@ Joueur::Joueur() {
     en_prison=false;
     nb_carte_prison=1;
     nb_tour_prison=1;
+    nb_hotel=0;
+    nb_maison=0;
 }
 
 void Joueur::jouer(){
@@ -44,8 +48,10 @@ void Joueur::jouer(){
             }
         }else{
             cout<<"Lancé des dés : "<<endl;
-            int de1=monJeu->lancer_des(1);
-            int de2=monJeu->lancer_des(2);
+            //int de1=monJeu->lancer_des(1);
+            //int de2=monJeu->lancer_des(2);
+            int de1=6;
+            int de2=1;
             if(de1==de2){
                 continuer_jouer= true;
                 if(nb_double>=2){

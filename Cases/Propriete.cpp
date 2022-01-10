@@ -27,7 +27,5 @@ void Propriete::acheter(Joueur *joueur) {
         achete=true;
         cout<<"Achat effectué."<<endl;
     }
-    else{
-        cout<<"Fin de tour";
-    }
+    else{}
 }
