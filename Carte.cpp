@@ -40,27 +40,26 @@ void Carte::action_carte(Joueur *joueur){
     }
 
     //Action sur argent avec la banque
-    if (argent=!0){
-        cout<<joueur->getSolde()<<endl;
+    if (argent!=0){
         cout<<argent<<endl;
         joueur->crediter(argent);
-        cout<<joueur->getSolde()<<endl;
     }
 
     //Carte vous êtes libérer de prison
     if(prison!=0){
         joueur->gagne_carte_prison();
-        cout<<"Vous avez maintenant : "<<joueur->getNbCartePrison()<<"carte(s) liberer de prison"<<endl;
+        cout<<"Vous avez maintenant : "<<joueur->getNbCartePrison()<<"carte(s) libérer de prison"<<endl;
     }
 
     //Aller à une case précise
     if(lieu!=-1){
         joueur->aller_vers(lieu);
+        joueur->executer_case();
     }
 
     //Carte impôt maison et hotel
 
-    if(ipascher=!0){
+    if(ipascher!=0){
         joueur->debiter((25*joueur->getNbMaison())+ (100*joueur->getNbHotel()));
     }
 
