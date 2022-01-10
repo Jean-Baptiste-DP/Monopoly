@@ -28,24 +28,24 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                         joueur->remettre_tour_prison_a_zero();
                         joueur->perd_carte_prison();
                         cout<<"Nombres de cartes restantes : "<<joueur->getNbCartePrison()<<endl;
-                        int de1=monJeu->lancer_des();
+                        /*int de1=monJeu->lancer_des();
                         int de2=monJeu->lancer_des();
                         nb_total = de1 + de2;
                         cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                         joueur->deplacer(nb_total);
-                        joueur->executer_case(nb_total);
+                        joueur->executer_case();*/
                     }
                     else{
                         joueur->setPrison(false);
                         joueur->remettre_tour_prison_a_zero();
                         joueur->debiter(50);
                         cout << "Votre nouveau solde est : "<<joueur->getSolde() <<" euros."<< endl;
-                        int de1=monJeu->lancer_des();
+                        /*int de1=monJeu->lancer_des();
                         int de2=monJeu->lancer_des();
                         nb_total = de1 + de2;
                         cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                         joueur->deplacer(nb_total);
-                        joueur->executer_case(nb_total);
+                        joueur->executer_case();*/
                     }
                 }
                 else {
@@ -53,12 +53,12 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     joueur->setPrison(false);
                     joueur->remettre_tour_prison_a_zero();
                     cout << "Votre nouveau solde est : "<<joueur->getSolde() <<" euros."<< endl;
-                    int de1=monJeu->lancer_des();
+                    /*int de1=monJeu->lancer_des();
                     int de2=monJeu->lancer_des();
                     nb_total = de1 + de2;
                     cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                     joueur->deplacer(nb_total);
-                    joueur->executer_case(nb_total);
+                    joueur->executer_case(nb_total);*/
                 }
             }
             else {
@@ -72,12 +72,12 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     cout << "Payement en cours" << endl;
                     joueur->debiter(50);
                     cout << "Votre nouveau solde est : "<<joueur->getSolde() <<" euros."<< endl;
-                    int de1=monJeu->lancer_des();
+                    /*int de1=monJeu->lancer_des();
                     int de2=monJeu->lancer_des();
                     nb_total = de1 + de2;
                     cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                     joueur->deplacer(nb_total);
-                    joueur->executer_case(nb_total);
+                    joueur->executer_case(nb_total);*/
                 }
                 else if (reponse == "utiliser_carte") { //pas l'impression qu'il rentre dans cette boucle
                     cout << "Utilisation de la carte" << endl;
@@ -88,24 +88,24 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                         cout << "Payement en cours" << endl;
                         joueur->debiter(50);
                         cout << "Votre nouveau solde est : "<<joueur->getSolde() <<" euros."<< endl;
-                        int de1=monJeu->lancer_des();
+                        /*int de1=monJeu->lancer_des();
                         int de2=monJeu->lancer_des();
                         nb_total = de1 + de2;
                         cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                         joueur->deplacer(nb_total);
-                        joueur->executer_case(nb_total);
+                        joueur->executer_case(nb_total);*/
                     }
                     else {
                         joueur->setPrison(false);
                         joueur->remettre_tour_prison_a_zero();
                         joueur->perd_carte_prison();
                         cout << "Nombre de cartes restantes: " << joueur->getNbCartePrison() << endl;
-                        int de1=monJeu->lancer_des();
+                        /*int de1=monJeu->lancer_des();
                         int de2=monJeu->lancer_des();
                         nb_total = de1 + de2;
                         cout<<"Vous avez obtenu "<<nb_total<<" au lancer des des"<<endl;
                         joueur->deplacer(nb_total);
-                        joueur->executer_case(nb_total);
+                        joueur->executer_case(nb_total);*/
                     }
                 }
                 else{
@@ -113,13 +113,13 @@ void Prison::arreterSur(Joueur *joueur, int nombre_cases) {
                     int de2=monJeu->lancer_des();
                     if (de1==de2){
                         cout<<"Vous avez obtenu un double et pouvez sortir de prison"<<endl;
-                        nb_total = de1 + de2;
+                        /*nb_total = de1 + de2;
                         joueur->deplacer(nb_total);
                         joueur->executer_case(nb_total);
                         int de3=monJeu->lancer_des();
                         int de4=monJeu->lancer_des();
                         joueur->deplacer(de3+de4);
-                        joueur->executer_case(nb_total);
+                        joueur->executer_case(nb_total);*/
                         //cout<<"Vous etes sur la case "<<joueur->(position->getNom)()<<endl;
                         /* il faudrait faire un deuxième lancer si il y a un double mais
                          *      pas possible de mettre 2 fois les mêmes paramètres +
