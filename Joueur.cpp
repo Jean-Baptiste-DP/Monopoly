@@ -71,7 +71,26 @@ void Joueur::jouer(){
             }
         }
     }
+    string reponse="solde";
+    cout<<"-------------------------"<<endl;
+    cout<<"Fin de tour"<<endl;
+    while(reponse=="solde" or reponse=="maison" or reponse=="hypotheque" or reponse=="hotel"){
+        cout<<"Vous pouvez connaitre votre solde (solde),vos proprietes (proprietes), acheter une maison (maison) \n ou un hotel (hotel), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
+        cin>>reponse;
+        if(reponse=="solde"){
+            cout<<"Vous avez "<<solde<<"€"<<endl;
+        }else if(reponse=="maison"){
+
+        }else if(reponse=="hotel"){
+
+        }else if(reponse=="proprietes"){
+
+        }else if(reponse=="hypotheque"){
+
+        }
+    }
 }
+
 
 void Joueur::debiter(int montant) {
     solde-=montant;
