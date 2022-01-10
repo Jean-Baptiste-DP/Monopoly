@@ -26,7 +26,7 @@ public:
     Joueur(int pos,jeu *monJeu1);
     void jouer();
     void deplacer(int nb_cases);
-    void executer_case(int nb_des);
+    void executer_case();
     void aller_vers(int numero_case);
     void debiter(int montant);
     void crediter(int montant);

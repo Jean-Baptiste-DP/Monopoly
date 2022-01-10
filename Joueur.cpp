@@ -103,7 +103,7 @@ void Joueur::crediter(int montant) {
 void Joueur::deplacer(int nb_cases) {
     position=position->deplacer(nb_cases);
 }
-void Joueur::executer_case(int nb_des) {
+void Joueur::executer_case() {
     position->arreterSur(this,0);
 }
 void Joueur::aller_vers(int numero_case) {
