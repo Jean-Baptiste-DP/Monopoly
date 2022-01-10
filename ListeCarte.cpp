@@ -51,15 +51,20 @@ ListeCarte::ListeCarte(){
 
 
 void ListeCarte::piocher_carte_chance(Joueur *joueur){
-    std::default_random_engine re(time(0));
-    std::uniform_int_distribution<int> distrib{0, 15};
-    liste_carte_chance[distrib(re)].action_carte(joueur);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distrib(0, 15);
+    int num_carte=distrib(gen);
+    //liste_carte_chance[num_carte].action_carte(joueur);
+    liste_carte_chance[5].action_carte(joueur);
 
 }
 
 void ListeCarte::piocher_carte_communaute(Joueur *joueur){
-    std::default_random_engine re(time(0));
-    std::uniform_int_distribution<int> distrib{0, 13};
-    liste_carte_communaute[distrib(re)].action_carte(joueur);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distrib(0, 13);
+    int num_carte=distrib(gen);
+    liste_carte_communaute[num_carte].action_carte(joueur);
 
 }

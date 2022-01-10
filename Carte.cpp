@@ -28,7 +28,7 @@ void Carte::piocher_carte() {
 void Carte::action_carte(Joueur *joueur){
     //On affiche le texte de la carte au joueur
 
-    cout<<texte;
+    cout<<texte<<endl;
 
 
     //On effectue l'action
@@ -41,7 +41,10 @@ void Carte::action_carte(Joueur *joueur){
 
     //Action sur argent avec la banque
     if (argent=!0){
+        cout<<joueur->getSolde()<<endl;
+        cout<<argent<<endl;
         joueur->crediter(argent);
+        cout<<joueur->getSolde()<<endl;
     }
 
     //Carte vous êtes libérer de prison
