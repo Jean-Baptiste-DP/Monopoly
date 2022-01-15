@@ -50,7 +50,7 @@ void Joueur::jouer(){
             cout<<"Lancé des dés : "<<endl;
             //int de1=monJeu->lancer_des(1);
             //int de2=monJeu->lancer_des(2);
-            int de1=6;
+            int de1=3;
             int de2=1;
             if(de1==de2){
                 continuer_jouer= true;
