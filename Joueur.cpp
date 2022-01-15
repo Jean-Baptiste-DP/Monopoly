@@ -51,7 +51,7 @@ void Joueur::jouer(){
             //int de1=monJeu->lancer_des(1);
             //int de2=monJeu->lancer_des(2);
             int de1=3;
-            int de2=1;
+            int de2=4;
             if(de1==de2){
                 continuer_jouer= true;
                 if(nb_double>=2){
@@ -101,7 +101,7 @@ void Joueur::crediter(int montant) {
 }
 
 void Joueur::deplacer(int nb_cases) {
-    position=position->deplacer(nb_cases);
+    position=position->deplacer(nb_cases, this);
 }
 void Joueur::executer_case() {
     position->arreterSur(this,0);

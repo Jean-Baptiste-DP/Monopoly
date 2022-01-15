@@ -30,11 +30,15 @@ void Case::setSuivante(Case *suivante) {
     Case::suivante = suivante;
 }
 
-Case *Case::deplacer(int nb_pas) {
+Case *Case::deplacer(int nb_pas, Joueur* mon_joueur) {
+    if (nom=="Rue de la Paix"){
+    cout<<"Vous venez de passer par la case de départ. Vous gagnez 200€"<<endl;
+    mon_joueur->crediter(200);
+    }
     if (nb_pas<=1){
         return suivante;
     }else{
-        return suivante->deplacer(nb_pas-1);
+        return suivante->deplacer(nb_pas-1, mon_joueur);
     }
 }
 

@@ -20,7 +20,7 @@ public:
     void setNom(const string &nom);
     Case *getSuivante() const;
     void setSuivante(Case *suivante);
-    Case *deplacer(int nb_pas);
+    Case *deplacer(int nb_pas, Joueur* mon_joueur);
 
     void setMonJeu(jeu *monJeu);
 };
