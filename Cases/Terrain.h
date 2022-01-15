@@ -14,7 +14,7 @@ private:
     Terrain* dans_groupe[2];
     int nb_maison;
 public:
-    Terrain(string nom, int prix_achat,int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison);
+    Terrain(string nom, int prix_achat,int num_case, int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison);
     Terrain();
     void arreterSur(Joueur *joueur, int nombre_cases);
     void setGroupe(Terrain* moi, Terrain* voisin1,Terrain* voisin2);

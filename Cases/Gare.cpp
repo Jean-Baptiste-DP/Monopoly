@@ -4,7 +4,7 @@
 
 #include "Gare.h"
 
-Gare::Gare(string nom, int prix_achat): Propriete(nom,prix_achat) {}
+Gare::Gare(string nom, int prix_achat, int num_case): Propriete(nom,prix_achat, num_case) {}
 
 Gare::Gare() {}
 

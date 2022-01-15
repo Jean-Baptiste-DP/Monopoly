@@ -4,7 +4,7 @@
 
 #include "Terrain.h"
 
-Terrain::Terrain(string nom, int prix_achat,int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison):Propriete(nom,prix_achat){
+Terrain::Terrain(string nom, int prix_achat,int num_case, int terrain_nu,int maison1,int maison2,int maison3,int maison4,int hotel,int p_maison):Propriete(nom,prix_achat, num_case){
     loyer[0]=terrain_nu;
     loyer[1]=maison1;
     loyer[2]=maison2;

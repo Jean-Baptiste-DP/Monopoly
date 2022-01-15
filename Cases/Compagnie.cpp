@@ -4,7 +4,7 @@
 
 #include "Compagnie.h"
 
-Compagnie::Compagnie(string nom, int prix_achat): Propriete(nom,prix_achat) {}
+Compagnie::Compagnie(string nom, int prix_achat, int num_case): Propriete(nom,prix_achat, num_case) {}
 
 Compagnie::Compagnie() {}
 

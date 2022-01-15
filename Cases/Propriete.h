@@ -11,9 +11,10 @@ protected:
     int prix_achat;
     int prix_hypotheque;
     bool achete;
+    int num_case;
     Joueur *proprietaire;
 public:
-    Propriete(string nom, int prix_ach);
+    Propriete(string nom, int prix_ach, int n_case);
     Propriete();
     void acheter(Joueur *joueur);
 };
