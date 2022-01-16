@@ -36,6 +36,7 @@ void Carte::action_carte(Joueur *joueur){
     //Reculer de 3 cases
     if (deplacement!=0){
         joueur->deplacer(37);
+        joueur->executer_case();
         joueur->debiter(200);
     }
 

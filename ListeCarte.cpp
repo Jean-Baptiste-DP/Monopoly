@@ -55,7 +55,8 @@ void ListeCarte::piocher_carte_chance(Joueur *joueur){
     mt19937 gen(rd());
     uniform_int_distribution<> distrib(0, 15);
     int num_carte=distrib(gen);
-    liste_carte_chance[num_carte].action_carte(joueur);
+    //liste_carte_chance[num_carte].action_carte(joueur);
+    liste_carte_chance[14].action_carte(joueur);
 
 }
 
