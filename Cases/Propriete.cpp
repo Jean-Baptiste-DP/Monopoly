@@ -9,12 +9,11 @@ Propriete::Propriete(string nom,int prix_ach, int n_case):Case(nom){
     prix_achat=prix_ach;
     prix_hypotheque=prix_achat/2;
     achete=false;
+    hypotheque=false;
     num_case=n_case;
 }
 
-Propriete::Propriete() {
-    prix_achat=99999;
-}
+Propriete::Propriete() {}
 
 void Propriete::acheter(Joueur *joueur) {
     string reponse;
@@ -31,6 +30,18 @@ void Propriete::acheter(Joueur *joueur) {
     else{}
 }
 
+void Propriete::hypothequer(Joueur *joueur) {
+    if(hypotheque){
+        joueur->debiter(1.1*prix_hypotheque);
+        hypotheque=false;
+        cout<<nom<<" n'est maintenant plus hypothèqué"<<endl;
+    }else{
+        joueur->crediter(prix_hypotheque);
+        hypotheque=true;
+        cout<<nom<<" est maintenant hypothèqué"<<endl;
+    }
+}
+
 bool Propriete::isAchete() const {
     return achete;
 }
@@ -41,4 +52,12 @@ Joueur *Propriete::getProprietaire() const {
 
 int Propriete::getNumCase() const {
     return num_case;
+}
+
+bool Propriete::isHypotheque() const {
+    return hypotheque;
+}
+
+int Propriete::getPrixHypotheque() const {
+    return prix_hypotheque;
 }

@@ -48,10 +48,8 @@ void Joueur::jouer(){
             }
         }else{
             cout<<"Lancé des dés : "<<endl;
-            //int de1=monJeu->lancer_des(1);
-            //int de2=monJeu->lancer_des(2);
-            int de1=0;
-            int de2=4;
+            int de1=monJeu->lancer_des(1);
+            int de2=monJeu->lancer_des(2);
             if(de1==de2){
                 continuer_jouer= true;
                 if(nb_double>=2){
@@ -92,7 +90,7 @@ void Joueur::jouer(){
         }else if(reponse=="proprietes"){
             monJeu->getMonPlateau()->getProprietesJoueur(this);
         }else if(reponse=="hypotheque"){
-
+            monJeu->getMonPlateau()->hypotheque(this);
         }
     }
 }

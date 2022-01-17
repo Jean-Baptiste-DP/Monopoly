@@ -11,6 +11,7 @@ protected:
     int prix_achat;
     int prix_hypotheque;
     bool achete;
+    bool hypotheque;
     int num_case;
     Joueur *proprietaire;
 public:
@@ -20,6 +21,9 @@ public:
     bool isAchete() const;
     Joueur *getProprietaire() const;
     int getNumCase() const;
+    void hypothequer(Joueur *joueur);
+    bool isHypotheque() const;
+    int getPrixHypotheque() const;
 };
 
 #endif //MONOPOLY_PROPRIETE_H

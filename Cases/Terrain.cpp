@@ -23,9 +23,13 @@ void Terrain::arreterSur(Joueur *joueur, int nombre_cases){
             cout<<"Vous êtes propriétaire."<<endl;
         }
         else{
-            joueur->debiter(loyer[nb_maison]);
-            proprietaire->crediter(loyer[nb_maison]);
-            cout<<"Vous devez "<<loyer[nb_maison]<<"€ à "<<proprietaire->getNom()<<endl;
+            if(hypotheque){
+                cout<<"Le terrain est hypothèqué"<<endl;
+            }else{
+                joueur->debiter(loyer[nb_maison]);
+                proprietaire->crediter(loyer[nb_maison]);
+                cout<<"Vous devez "<<loyer[nb_maison]<<"€ à "<<proprietaire->getNom()<<endl;
+            }
         }
     }
     else{
@@ -64,6 +68,8 @@ bool Terrain::toutGroupe(Joueur *monJoueur){
     for (int i=0;i<nb_voisin;i++){
         if(dans_groupe[i]->isAchete()){
             toutAppartient=(toutAppartient and dans_groupe[i]->proprietaire->getNom()==monJoueur->getNom() and nb_maison<=dans_groupe[i]->getNbMaison());
+        }else{
+            toutAppartient=false;
         }
     }
     return toutAppartient;

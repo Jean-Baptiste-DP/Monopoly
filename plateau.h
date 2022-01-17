@@ -36,6 +36,7 @@ public:
     void getProprietesJoueur(Joueur *monJoueur) const;
     bool AcheterMaison(Joueur *monJoueur);
     bool AcheterHotel(Joueur *monJoueur);
+    void hypotheque(Joueur *monJoueur);
 };
 
 

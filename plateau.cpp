@@ -126,7 +126,12 @@ void plateau::getProprietesJoueur(Joueur *monJoueur) const {
     for (int i=0;i<22;i++){
         if (lesTerrains[i].isAchete()){
             if(lesTerrains[i].getProprietaire()->getNom()==monJoueur->getNom()){
-                cout<<" - "<<lesTerrains[i].getNom()<<endl;
+                cout<<" - "<<lesTerrains[i].getNom();
+                if(lesTerrains[i].isHypotheque()){
+                    cout<<" (hypothèqué)"<<endl;
+                }else{
+                    cout<<endl;
+                }
             }
         }
     }
@@ -134,7 +139,12 @@ void plateau::getProprietesJoueur(Joueur *monJoueur) const {
     for (int i=0;i<4;i++){
         if (lesGares[i].isAchete()){
             if(lesGares[i].getProprietaire()->getNom()==monJoueur->getNom()){
-                cout<<" - "<<lesGares[i].getNom()<<endl;
+                cout<<" - "<<lesGares[i].getNom();
+                if(lesGares[i].isHypotheque()){
+                    cout<<" (hypothèqué)"<<endl;
+                }else{
+                    cout<<endl;
+                }
             }
         }
     }
@@ -142,7 +152,12 @@ void plateau::getProprietesJoueur(Joueur *monJoueur) const {
     for (int i=0;i<2;i++){
         if (lesCompagnies[i].isAchete()){
             if(lesCompagnies[i].getProprietaire()->getNom()==monJoueur->getNom()){
-                cout<<" - "<<lesCompagnies[i].getNom()<<endl;
+                cout<<" - "<<lesCompagnies[i].getNom();
+                if(lesCompagnies[i].isHypotheque()){
+                    cout<<" (hypothèqué)"<<endl;
+                }else{
+                    cout<<endl;
+                }
             }
         }
     }
@@ -210,6 +225,71 @@ bool plateau::AcheterHotel(Joueur *monJoueur) {
             return true;
         }else{
             return false;
+        }
+    }
+}
+
+void plateau::hypotheque(Joueur *monJoueur) {
+    cout<<"Vous pouvez hypothequer ou racheter ces terrains "<<endl;
+    int cases[28];
+    for (int i=0;i<28;i++){
+        cases[i]=0;
+    }
+    cout<<"Les Terrains"<<endl;
+    for (int i=0;i<22;i++){
+        if (lesTerrains[i].isAchete()){
+            if(lesTerrains[i].getProprietaire()->getNom()==monJoueur->getNom()){
+                cases[i]=1;
+                if(lesTerrains[i].isHypotheque()){
+                    cout<<" - "<<lesTerrains[i].getNom()<<"("<<i<<") racheter pour "<<1.1*lesTerrains[i].getPrixHypotheque()<<endl;
+                    }else{
+                    cout<<" - "<<lesTerrains[i].getNom()<<"("<<i<<") hypothequer pour "<<lesTerrains[i].getPrixHypotheque()<<endl;
+                }
+            }
+        }
+    }
+    cout<<"Les Gares"<<endl;
+    for (int i=22;i<26;i++){
+        if (lesGares[i-22].isAchete()){
+            if(lesGares[i-22].getProprietaire()->getNom()==monJoueur->getNom()){
+                cases[i]=1;
+                if(lesGares[i-22].isHypotheque()){
+                    cout<<" - "<<lesGares[i-22].getNom()<<"("<<i<<") racheter pour "<<1.1*lesGares[i-22].getPrixHypotheque()<<endl;
+                }else{
+                    cout<<" - "<<lesGares[i-22].getNom()<<"("<<i<<") hypothequer pour "<<lesGares[i-22].getPrixHypotheque()<<endl;
+                }
+            }
+        }
+    }
+    cout<<"Les Compagnies"<<endl;
+    for (int i=26;i<28;i++){
+        if (lesCompagnies[i-26].isAchete()){
+            if(lesCompagnies[i-26].getProprietaire()->getNom()==monJoueur->getNom()){
+                cases[i]=1;
+                if(lesCompagnies[i-26].isHypotheque()){
+                    cout<<" - "<<lesCompagnies[i-26].getNom()<<"("<<i<<") racheter pour "<<1.1*lesCompagnies[i-26].getPrixHypotheque()<<endl;
+                }else{
+                    cout<<" - "<<lesCompagnies[i-26].getNom()<<"("<<i<<") hypothequer pour "<<lesCompagnies[i-26].getPrixHypotheque()<<endl;
+                }
+            }
+        }
+    }
+    string n_terrain;
+    cout<<endl<<"Sur quel terrain voulez vous hypothequer (ou racheter) (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
+    cin>>n_terrain;
+
+    if(n_terrain=="passer"){}else
+    {
+        int int_n = stoi(n_terrain);
+        if(cases[int_n]==1){
+            if(int_n<22){
+                lesTerrains[int_n].hypothequer(monJoueur);
+            }else if(int_n<26){
+                lesGares[int_n-22].hypothequer(monJoueur);
+            }else{
+                lesCompagnies[int_n-26].hypothequer(monJoueur);
+            }
+
         }
     }
 }

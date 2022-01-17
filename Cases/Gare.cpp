@@ -14,25 +14,29 @@ void Gare::arreterSur(Joueur *joueur, int nombre_cases) {
             cout<<"Vous êtes propriétaire."<<endl;
         }
         else{
-            int nb_gare=1;
-            int prix;
-            for (int i=0;i<3;i++){
-                if (autres_gares[i]->achete && proprietaire==autres_gares[i]->proprietaire){
-                    nb_gare++;
-                }
-            }
-            if (nb_gare==1){
-                prix=25;
-            }else if(nb_gare==2){
-                prix=50;
-            }else if(nb_gare==3){
-                prix=100;
+            if(hypotheque){
+                cout<<"La gare est hypothèqué"<<endl;
             }else{
-                prix=200;
+                int nb_gare=1;
+                int prix;
+                for (int i=0;i<3;i++){
+                    if (autres_gares[i]->achete && proprietaire==autres_gares[i]->proprietaire){
+                        nb_gare++;
+                    }
+                }
+                if (nb_gare==1){
+                    prix=25;
+                }else if(nb_gare==2){
+                    prix=50;
+                }else if(nb_gare==3){
+                    prix=100;
+                }else{
+                    prix=200;
+                }
+                joueur->debiter(prix);
+                proprietaire->crediter(prix);
+                cout<<"Vous devez "<<prix<<"€ à "<<proprietaire->getNom()<<endl;
             }
-            joueur->debiter(prix);
-            proprietaire->crediter(prix);
-            cout<<"Vous devez "<<prix<<"€ à "<<proprietaire->getNom()<<endl;
         }
     }
     else{

@@ -14,19 +14,23 @@ void Compagnie::arreterSur(Joueur *joueur, int nombre_cases) {
             cout<<"Vous êtes propriétaire."<<endl;
         }
         else{
-            int nb_compagnie=1;
-            int prix;
-            if (autres_compagnie->achete && proprietaire==autres_compagnie->proprietaire) {
-                nb_compagnie++;
-            }
-            if (nb_compagnie==1){
-                prix=4*nombre_cases;
+            if(hypotheque){
+                cout<<"La compagnie est hypothèqué"<<endl;
             }else{
-                prix=10*nombre_cases;
+                int nb_compagnie=1;
+                int prix;
+                if (autres_compagnie->achete && proprietaire==autres_compagnie->proprietaire) {
+                    nb_compagnie++;
+                }
+                if (nb_compagnie==1){
+                    prix=4*nombre_cases;
+                }else{
+                    prix=10*nombre_cases;
+                }
+                joueur->debiter(prix);
+                proprietaire->crediter(prix);
+                cout<<"Vous devez "<<prix<<"€ à "<<proprietaire->getNom()<<endl;
             }
-            joueur->debiter(prix);
-            proprietaire->crediter(prix);
-            cout<<"Vous devez "<<prix<<"€ à "<<proprietaire->getNom()<<endl;
         }
     }
     else{
