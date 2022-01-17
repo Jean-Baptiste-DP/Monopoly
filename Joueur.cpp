@@ -50,7 +50,7 @@ void Joueur::jouer(){
             cout<<"Lancé des dés : "<<endl;
             //int de1=monJeu->lancer_des(1);
             //int de2=monJeu->lancer_des(2);
-            int de1=3;
+            int de1=0;
             int de2=4;
             if(de1==de2){
                 continuer_jouer= true;
@@ -60,6 +60,7 @@ void Joueur::jouer(){
                     setPrison(true);
                     nb_double=0;
                 }else{
+                    deplacer(de1+de2);
                     cout<<"Vous êtes arrivés sur : "<<position->getNom()<<endl;
                     position->arreterSur(this,de1+de2);
                     cout<<"Vous avez fait un double, vous pouvez rejouer"<<endl;
@@ -72,19 +73,24 @@ void Joueur::jouer(){
         }
     }
     string reponse="solde";
+    bool aAcheteBatiment=false;
     cout<<"-------------------------"<<endl;
     cout<<"Fin de tour"<<endl;
-    while(reponse=="solde" or reponse=="maison" or reponse=="hypotheque" or reponse=="hotel"){
-        cout<<"Vous pouvez connaitre votre solde (solde),vos proprietes (proprietes), acheter une maison (maison) \n ou un hotel (hotel), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
+    while(reponse=="solde" or reponse=="maison" or reponse=="hypotheque" or reponse=="hotel" or reponse=="proprietes"){
+        if(aAcheteBatiment){
+            cout<<"Vous pouvez connaitre votre solde (solde), vos proprietes (proprietes), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
+        }else{
+            cout<<"Vous pouvez connaitre votre solde (solde),vos proprietes (proprietes), acheter une maison (maison) \n ou un hotel (hotel), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
+        }
         cin>>reponse;
         if(reponse=="solde"){
             cout<<"Vous avez "<<solde<<"€"<<endl;
-        }else if(reponse=="maison"){
-
-        }else if(reponse=="hotel"){
-
+        }else if(reponse=="maison" and not aAcheteBatiment){
+            aAcheteBatiment=monJeu->getMonPlateau()->AcheterMaison(this);
+        }else if(reponse=="hotel" and not aAcheteBatiment){
+            aAcheteBatiment=monJeu->getMonPlateau()->AcheterHotel(this);
         }else if(reponse=="proprietes"){
-
+            monJeu->getMonPlateau()->getProprietesJoueur(this);
         }else if(reponse=="hypotheque"){
 
         }

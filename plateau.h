@@ -33,6 +33,9 @@ public:
     plateau();
     plateau(jeu *monJeu);
     Case* aller_vers(int indice);
+    void getProprietesJoueur(Joueur *monJoueur) const;
+    bool AcheterMaison(Joueur *monJoueur);
+    bool AcheterHotel(Joueur *monJoueur);
 };
 
 

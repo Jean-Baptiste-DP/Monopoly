@@ -17,6 +17,9 @@ public:
     Propriete(string nom, int prix_ach, int n_case);
     Propriete();
     void acheter(Joueur *joueur);
+    bool isAchete() const;
+    Joueur *getProprietaire() const;
+    int getNumCase() const;
 };
 
 #endif //MONOPOLY_PROPRIETE_H

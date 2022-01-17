@@ -119,3 +119,97 @@ plateau::plateau(){}
 Case* plateau::aller_vers(int indice) {
     return liste_cases[indice];
 }
+
+void plateau::getProprietesJoueur(Joueur *monJoueur) const {
+    cout<<"Propriétés de "<<monJoueur->getNom()<<endl<<endl;
+    cout<<"Les Terrains"<<endl;
+    for (int i=0;i<22;i++){
+        if (lesTerrains[i].isAchete()){
+            if(lesTerrains[i].getProprietaire()->getNom()==monJoueur->getNom()){
+                cout<<" - "<<lesTerrains[i].getNom()<<endl;
+            }
+        }
+    }
+    cout<<"Les Gares"<<endl;
+    for (int i=0;i<4;i++){
+        if (lesGares[i].isAchete()){
+            if(lesGares[i].getProprietaire()->getNom()==monJoueur->getNom()){
+                cout<<" - "<<lesGares[i].getNom()<<endl;
+            }
+        }
+    }
+    cout<<"Les Compagnies"<<endl;
+    for (int i=0;i<2;i++){
+        if (lesCompagnies[i].isAchete()){
+            if(lesCompagnies[i].getProprietaire()->getNom()==monJoueur->getNom()){
+                cout<<" - "<<lesCompagnies[i].getNom()<<endl;
+            }
+        }
+    }
+}
+
+bool plateau::AcheterMaison(Joueur *monJoueur) {
+    cout<<"Vous pouvez acheter des maisons dans ces terrains "<<endl;
+    int cases[22];
+    for (int i=0;i<22;i++){
+        cases[i]=0;
+    }
+    for (int i=0;i<22;i++){
+        if (lesTerrains[i].isAchete()){
+            if(lesTerrains[i].toutGroupe(monJoueur)){
+                if(lesTerrains[i].getNbMaison()<4){
+                    cout<<" - "<<lesTerrains[i].getNom()<<"("<<i<<"), qui a "<<lesTerrains[i].getNbMaison()<<" maisons"<<endl;
+                    cases[i]=1;
+                }
+            }
+        }
+    }
+    string n_terrain;
+    cout<<endl<<"Sur quel terrain voulez vous acheter une maison (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
+    cin>>n_terrain;
+
+    if(n_terrain=="passer"){
+        return false;
+    }else{
+        int int_n = stoi(n_terrain);
+        if(cases[int_n]==1){
+            lesTerrains[int_n].AddMaison(monJoueur);
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+bool plateau::AcheterHotel(Joueur *monJoueur) {
+    cout<<"Vous pouvez acheter des hotels dans ces terrains "<<endl;
+    int cases[22];
+    for (int i=0;i<22;i++){
+        cases[i]=0;
+    }
+    for (int i=0;i<22;i++){
+        if (lesTerrains[i].isAchete()){
+            if(lesTerrains[i].toutGroupe(monJoueur)){
+                if(lesTerrains[i].getNbMaison()==4){
+                    cout<<" - "<<lesTerrains[i].getNom()<<"("<<i<<")"<<endl;
+                    cases[i]=1;
+                }
+            }
+        }
+    }
+    string n_terrain;
+    cout<<endl<<"Sur quel terrain voulez vous acheter un hotel (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
+    cin>>n_terrain;
+
+    if(n_terrain=="passer"){
+        return false;
+    }else{
+        int int_n = stoi(n_terrain);
+        if(cases[int_n]==1){
+            lesTerrains[int_n].AddMaison(monJoueur);
+            return true;
+        }else{
+            return false;
+        }
+    }
+}

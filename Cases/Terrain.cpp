@@ -58,3 +58,29 @@ void Terrain::setGroupe(Terrain *voisin) {
     dans_groupe[0]=voisin;
     nb_voisin=1;
 }
+
+bool Terrain::toutGroupe(Joueur *monJoueur){
+    bool toutAppartient=(monJoueur->getNom()==proprietaire->getNom());
+    for (int i=0;i<nb_voisin;i++){
+        if(dans_groupe[i]->isAchete()){
+            toutAppartient=(toutAppartient and dans_groupe[i]->proprietaire->getNom()==monJoueur->getNom() and nb_maison<=dans_groupe[i]->getNbMaison());
+        }
+    }
+    return toutAppartient;
+}
+
+int Terrain::getNbMaison() const {
+    return nb_maison;
+}
+
+void Terrain::AddMaison(Joueur *monJoueur) {
+    if(toutGroupe(monJoueur)){
+        monJoueur->debiter(prix_maison);
+        nb_maison++;
+        if(nb_maison==5){
+            cout<<"Vous avez maintenant un hotel sur "<<nom<<endl;
+        }else{
+            cout<<"Vous venez de rajouter une maison à "<<nom<<" qui a maintenant "<<nb_maison<<" maisons."<<endl;
+        }
+    }
+}

@@ -30,3 +30,15 @@ void Propriete::acheter(Joueur *joueur) {
     }
     else{}
 }
+
+bool Propriete::isAchete() const {
+    return achete;
+}
+
+Joueur *Propriete::getProprietaire() const {
+    return proprietaire;
+}
+
+int Propriete::getNumCase() const {
+    return num_case;
+}

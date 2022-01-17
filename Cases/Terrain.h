@@ -20,6 +20,9 @@ public:
     void setGroupe(Terrain* moi, Terrain* voisin1,Terrain* voisin2);
     void setGroupe(Terrain* moi, Terrain* voisin,bool first=true);
     void setGroupe(Terrain* voisin);
+    bool toutGroupe(Joueur *monJoueur);
+    int getNbMaison() const;
+    void AddMaison(Joueur *monJoueur);
 };
 
 
