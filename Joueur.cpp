@@ -9,8 +9,7 @@
 Joueur::Joueur(int pos,jeu *monJeu1) {
     cout << "Quel est le nom du Joueur "<<pos<<" ?"<<endl;
     cin >> Nom;
-    //solde = 1500;
-    solde=150;
+    solde = 1500;
     en_prison=false;
     nb_carte_prison=0;
     nb_tour_prison=0;
