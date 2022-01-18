@@ -42,7 +42,6 @@ void Carte::action_carte(Joueur *joueur){
 
     //Action sur argent avec la banque
     if (argent!=0){
-        cout<<argent<<endl;
         joueur->crediter(argent);
     }
 
