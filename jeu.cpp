@@ -17,6 +17,7 @@ jeu::jeu(){
         listeJoueur[i]=Joueur(i+1,this);
     }
     joueur_en_cours=0;
+    nbJoueurMaintenant=nbJoueurs;
 }
 
 
@@ -44,9 +45,24 @@ plateau *jeu::getMonPlateau(){
 void jeu::Jouer(){
     cout<<"Début du jeu"<<endl;
     int nombre_actions=0;
-    while(nombre_actions<10){
+    int max_action=100;
+    while(nombre_actions<max_action){
         nombre_actions++;
-        listeJoueur[joueur_en_cours].jouer();
+        if(listeJoueur[joueur_en_cours].getSolde()>=0 and nbJoueurMaintenant>1){
+            listeJoueur[joueur_en_cours].jouer();
+        }
+        else if(listeJoueur[joueur_en_cours].getSolde()>=0 and nbJoueurMaintenant==1){
+            cout<<listeJoueur[joueur_en_cours].getNom()<<", vous avez gagné !" << endl;
+            nombre_actions=max_action;
+        }
         joueur_en_cours=(joueur_en_cours+1)%nbJoueurs;
     }
+}
+
+int jeu::getNbJoueurMaintenant() const {
+    return nbJoueurMaintenant;
+}
+
+void jeu::setNbJoueurMaintenant(int nbJoueurMaintenant) {
+    jeu::nbJoueurMaintenant = nbJoueurMaintenant;
 }

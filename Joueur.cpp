@@ -90,6 +90,11 @@ void Joueur::jouer(){
             monJeu->getMonPlateau()->hypotheque(this);
         }
     }
+
+    if (solde<0){
+        cout<<"Vous êtes en négatif vous avez perdu."<<endl;
+        monJeu->setNbJoueurMaintenant(monJeu->getNbJoueurMaintenant()-1);
+    }
 }
 
 
