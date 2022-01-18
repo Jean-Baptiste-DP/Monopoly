@@ -71,22 +71,19 @@ void Joueur::jouer(){
         }
     }
     string reponse="solde";
-    bool aAcheteBatiment=false;
     cout<<"-------------------------"<<endl;
     cout<<"Fin de tour"<<endl;
     while(reponse=="solde" or reponse=="maison" or reponse=="hypotheque" or reponse=="hotel" or reponse=="proprietes"){
-        if(aAcheteBatiment){
-            cout<<"Vous pouvez connaitre votre solde (solde), vos proprietes (proprietes), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
-        }else{
-            cout<<"Vous pouvez connaitre votre solde (solde),vos proprietes (proprietes), acheter une maison (maison) \n ou un hotel (hotel), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
-        }
+
+        cout<<"Vous pouvez connaitre votre solde (solde),vos proprietes (proprietes), acheter une maison (maison) \n ou un hotel (hotel), hypothequer (hypotheque) ou passer au Joueur suivant (passer)"<<endl;
+
         cin>>reponse;
         if(reponse=="solde"){
             cout<<"Vous avez "<<solde<<"€"<<endl;
-        }else if(reponse=="maison" and not aAcheteBatiment){
-            aAcheteBatiment=monJeu->getMonPlateau()->AcheterMaison(this);
-        }else if(reponse=="hotel" and not aAcheteBatiment){
-            aAcheteBatiment=monJeu->getMonPlateau()->AcheterHotel(this);
+        }else if(reponse=="maison"){
+            monJeu->getMonPlateau()->AcheterMaison(this);
+        }else if(reponse=="hotel"){
+            monJeu->getMonPlateau()->AcheterHotel(this);
         }else if(reponse=="proprietes"){
             monJeu->getMonPlateau()->getProprietesJoueur(this);
         }else if(reponse=="hypotheque"){

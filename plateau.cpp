@@ -163,7 +163,7 @@ void plateau::getProprietesJoueur(Joueur *monJoueur) const {
     }
 }
 
-bool plateau::AcheterMaison(Joueur *monJoueur) {
+void plateau::AcheterMaison(Joueur *monJoueur) {
     cout<<"Vous pouvez acheter des maisons dans ces terrains "<<endl;
     int cases[22];
     for (int i=0;i<22;i++){
@@ -183,20 +183,16 @@ bool plateau::AcheterMaison(Joueur *monJoueur) {
     cout<<endl<<"Sur quel terrain voulez vous acheter une maison (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
     cin>>n_terrain;
 
-    if(n_terrain=="passer"){
-        return false;
-    }else{
+    if(n_terrain=="passer"){}
+    else{
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
-            return true;
-        }else{
-            return false;
         }
     }
 }
 
-bool plateau::AcheterHotel(Joueur *monJoueur) {
+void plateau::AcheterHotel(Joueur *monJoueur) {
     cout<<"Vous pouvez acheter des hotels dans ces terrains "<<endl;
     int cases[22];
     for (int i=0;i<22;i++){
@@ -216,15 +212,11 @@ bool plateau::AcheterHotel(Joueur *monJoueur) {
     cout<<endl<<"Sur quel terrain voulez vous acheter un hotel (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
     cin>>n_terrain;
 
-    if(n_terrain=="passer"){
-        return false;
-    }else{
+    if(n_terrain=="passer"){}
+    else{
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
-            return true;
-        }else{
-            return false;
         }
     }
 }
