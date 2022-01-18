@@ -18,12 +18,17 @@ private:
     int nbJoueurs;
     int joueur_en_cours;
     Joueur listeJoueur[8];
+    int nbJoueurMaintenant;
 public:
     jeu();
     int lancer_des(int n=0);
     ListeCarte *getPaquet();
     plateau *getMonPlateau();
     void Jouer();
+
+    int getNbJoueurMaintenant() const;
+
+    void setNbJoueurMaintenant(int nbJoueurMaintenant);
 };
 
 
