@@ -21,6 +21,7 @@ private:
     int nbJoueurMaintenant;
 public:
     jeu();
+    jeu(int numero);
     int lancer_des(int n=0);
     ListeCarte *getPaquet();
     plateau *getMonPlateau();

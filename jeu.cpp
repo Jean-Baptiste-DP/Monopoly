@@ -20,6 +20,11 @@ jeu::jeu(){
     nbJoueurMaintenant=nbJoueurs;
 }
 
+jeu::jeu(int numero) {
+    paquet = new ListeCarte();
+    monPlateau = new plateau(this);
+}
+
 
 int jeu::lancer_des(int n){
     random_device rd;

@@ -1,0 +1,16 @@
+Comment créer une position initiale ?
+
+Sur la première ligne le nombre de joueurs
+
+Sur chaque ligne suivante, l'état d'un Joueur.
+Chaque partie est séparée par un "/"
+En premier son nom de Joueur
+Ensuite son solde
+Sa position sur le plateau
+Ensuite, le nombre de terrain qu'il possède, après ":" la liste des terrains(n° de terrain + "&" + nb de maisons) séparés par ","
+Ensuite, le nombre de gares qu'il possède, après ":" la liste des n° de gare séparés par ","
+Finalement, le nombre de compagnies qu'il possède, après : la liste des n° de compagnie séparés par ","
+
+/!\
+Si un joueur ne possède pas un type de propriété (ex pas de gare), on note ... /0:/ ...
+Et si un terrain ne possède pas de maisons "n&0", et si il y a un hotel "n&5"
