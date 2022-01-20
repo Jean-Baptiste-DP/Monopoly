@@ -19,6 +19,18 @@ Joueur::Joueur(int pos,jeu *monJeu1) {
     nb_maison=0;
 }
 
+Joueur::Joueur(jeu *monJeu1,string nom,int salaire,int pos) {
+    Nom=nom;
+    solde = salaire;
+    en_prison=false;
+    nb_carte_prison=0;
+    nb_tour_prison=0;
+    monJeu=monJeu1;
+    position=(monJeu->getMonPlateau())->aller_vers(pos);
+    nb_hotel=0;
+    nb_maison=0;
+}
+
 Joueur::Joueur() {
     Nom = "Toto";
     solde = 1500;
@@ -48,10 +60,10 @@ void Joueur::jouer(){
             }
         }else{
             cout<<"Lancé des dés : "<<endl;
-            //int de1=monJeu->lancer_des(1);
-            //int de2=monJeu->lancer_des(2);
-            int de1=2;
-            int de2=0;
+            int de1=monJeu->lancer_des(1);
+            int de2=monJeu->lancer_des(2);
+            //int de1=2;
+            //int de2=0;
             if(de1==de2){
                 continuer_jouer= true;
                 if(nb_double>=2){

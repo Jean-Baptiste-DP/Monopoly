@@ -23,6 +23,33 @@ jeu::jeu(){
 jeu::jeu(int numero) {
     paquet = new ListeCarte();
     monPlateau = new plateau(this);
+    ifstream monFlux("C:/Users/jbdur/CLionProjects/Monopoly/InitialPosition/Position0.txt");
+    if(monFlux)  //On teste si tout est OK
+    {
+        string content_1;
+        string content_2;
+        string content_3;
+        getline(monFlux,content_1);
+        nbJoueurs = stoi(content_1);
+        joueur_en_cours=0;
+        nbJoueurMaintenant=nbJoueurs;
+        for(int n_joueur=0;n_joueur<nbJoueurs;n_joueur++){
+            getline(monFlux,content_1,'/');
+            getline(monFlux,content_2,'/');
+            getline(monFlux,content_3,'/');
+            cout<<content_1<<endl;
+            cout<<content_2<<endl;
+            cout<<content_3<<endl;
+            listeJoueur[n_joueur]=Joueur(this,content_1,stoi(content_2),stoi(content_3));
+            getline(monFlux,content_1);
+            cout<<content_1<<endl;
+        }
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+        jeu();
+    }
 }
 
 

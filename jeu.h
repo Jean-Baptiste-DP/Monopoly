@@ -7,6 +7,7 @@
 using namespace std;
 #include <iostream>
 #include <random>
+#include <fstream>
 #include "Joueur.h"
 class plateau;
 #include "ListeCarte.h"

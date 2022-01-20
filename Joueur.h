@@ -24,6 +24,7 @@ private:
 public:
     Joueur();
     Joueur(int pos,jeu *monJeu1);
+    Joueur(jeu *monJeu1,string nom,int salaire,int pos);
     void jouer();
     void deplacer(int nb_cases);
     void executer_case();
