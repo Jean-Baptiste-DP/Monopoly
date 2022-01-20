@@ -10,8 +10,7 @@ En premier son nom de Joueur
 Ensuite son solde
 Sa position sur le plateau
 Ensuite, le nombre de terrain qu'il possède, après ":" la liste des terrains(n° de terrain + "&" + nb de maisons) séparés par "/"
-Ensuite, le nombre de gares qu'il possède, après ":" la liste des n° de gare séparés par "/"
-Finalement, le nombre de compagnies qu'il possède, après : la liste des n° de compagnie séparés par "/"
+Ensuite, le nombre de gares qu'il possède + nb compagnies, après ":" la liste des n° de gare et compagnie (n° compagnie + 4) séparés par "/"
 
 /!\
 Si un joueur ne possède pas un type de propriété (ex pas de gare), on note ... /0: ... sans délimiteur entre le ":" et la suite

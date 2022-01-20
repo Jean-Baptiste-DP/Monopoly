@@ -37,6 +37,8 @@ public:
     void AcheterMaison(Joueur *monJoueur);
     void AcheterHotel(Joueur *monJoueur);
     void hypotheque(Joueur *monJoueur);
+    void setProprietaire(Joueur *monJoueur,int n_terrain,int maisons);
+    void setProprietaire(Joueur *monJoueur,int n_terrain);
 };
 
 

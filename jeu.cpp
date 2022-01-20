@@ -41,8 +41,20 @@ jeu::jeu(int numero) {
             cout<<content_2<<endl;
             cout<<content_3<<endl;
             listeJoueur[n_joueur]=Joueur(this,content_1,stoi(content_2),stoi(content_3));
+            getline(monFlux,content_1,':');
+            int nb_proprietes= stoi(content_1);
+            for(int i=0;i<nb_proprietes;i++){
+                getline(monFlux,content_2,'&');
+                getline(monFlux,content_3,'/');
+                monPlateau->setProprietaire(&listeJoueur[n_joueur],stoi(content_2),stoi(content_3));
+            }
+            getline(monFlux,content_1,':');
+            nb_proprietes= stoi(content_1);
+            for(int i=0;i<nb_proprietes;i++){
+                getline(monFlux,content_2,'/');
+                monPlateau->setProprietaire(&listeJoueur[n_joueur],stoi(content_2));
+            }
             getline(monFlux,content_1);
-            cout<<content_1<<endl;
         }
     }
     else

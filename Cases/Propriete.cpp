@@ -50,6 +50,11 @@ Joueur *Propriete::getProprietaire() const {
     return proprietaire;
 }
 
+void Propriete::setProprietaire(Joueur *proprietaire) {
+    achete=true;
+    Propriete::proprietaire = proprietaire;
+}
+
 int Propriete::getNumCase() const {
     return num_case;
 }

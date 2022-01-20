@@ -79,6 +79,10 @@ int Terrain::getNbMaison() const {
     return nb_maison;
 }
 
+void Terrain::setNbMaison(int nbMaison) {
+    nb_maison = nbMaison;
+}
+
 void Terrain::AddMaison(Joueur *monJoueur) {
     if(toutGroupe(monJoueur)){
         monJoueur->debiter(prix_maison);

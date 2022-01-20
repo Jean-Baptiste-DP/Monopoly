@@ -47,7 +47,7 @@ plateau::plateau(jeu *monJeu) {
     lesTerrains[0]=Terrain("Boulevard de Belleville",60,1,2,10,30,90,160,250,50);
     leDepart=Depart("Départ");
 
-    //relation de groupe entre les cases
+    //relation de groupe entre les cases (cases de même couleur)
     //Terrains
     lesTerrains[0].setGroupe(&lesTerrains[0],&lesTerrains[1]);
     lesTerrains[2].setGroupe(&lesTerrains[2],&lesTerrains[3],&lesTerrains[4]);
@@ -283,5 +283,18 @@ void plateau::hypotheque(Joueur *monJoueur) {
             }
 
         }
+    }
+}
+
+void plateau::setProprietaire(Joueur *monJoueur, int n_terrain, int maisons) {
+    lesTerrains[n_terrain].setProprietaire(monJoueur);
+    lesTerrains[n_terrain].setNbMaison(maisons);
+}
+
+void plateau::setProprietaire(Joueur *monJoueur, int n_terrain) {
+    if(n_terrain>=4){
+        lesCompagnies[n_terrain-4].setProprietaire(monJoueur);
+    }else{
+        lesGares[n_terrain].setProprietaire(monJoueur);
     }
 }

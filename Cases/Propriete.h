@@ -24,6 +24,7 @@ public:
     void hypothequer(Joueur *joueur);
     bool isHypotheque() const;
     int getPrixHypotheque() const;
+    void setProprietaire(Joueur *proprietaire);
 };
 
 #endif //MONOPOLY_PROPRIETE_H

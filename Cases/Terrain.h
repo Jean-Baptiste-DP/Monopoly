@@ -23,6 +23,7 @@ public:
     bool toutGroupe(Joueur *monJoueur);
     int getNbMaison() const;
     void AddMaison(Joueur *monJoueur);
+    void setNbMaison(int nbMaison);
 };
 
 
