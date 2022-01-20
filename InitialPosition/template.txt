@@ -1,5 +1,7 @@
 Comment créer une position initiale ?
 
+Créer un fichier .txt appelé "Positionx.txt" avec x un numéro
+
 Sur la première ligne le nombre de joueurs
 
 Sur chaque ligne suivante, l'état d'un Joueur.
