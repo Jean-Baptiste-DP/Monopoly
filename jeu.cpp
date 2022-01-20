@@ -23,7 +23,7 @@ jeu::jeu(){
 jeu::jeu(int numero) {
     paquet = new ListeCarte();
     monPlateau = new plateau(this);
-    ifstream monFlux("C:/Users/jbdur/CLionProjects/Monopoly/InitialPosition/Position0.txt");
+    ifstream monFlux("C:/Users/jbdur/CLionProjects/Monopoly/InitialPosition/Position"+to_string(numero)+".txt");
     if(monFlux)  //On teste si tout est OK
     {
         string content_1;
@@ -37,9 +37,6 @@ jeu::jeu(int numero) {
             getline(monFlux,content_1,'/');
             getline(monFlux,content_2,'/');
             getline(monFlux,content_3,'/');
-            cout<<content_1<<endl;
-            cout<<content_2<<endl;
-            cout<<content_3<<endl;
             listeJoueur[n_joueur]=Joueur(this,content_1,stoi(content_2),stoi(content_3));
             getline(monFlux,content_1,':');
             int nb_proprietes= stoi(content_1);
