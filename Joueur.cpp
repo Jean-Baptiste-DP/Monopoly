@@ -48,8 +48,10 @@ void Joueur::jouer(){
             }
         }else{
             cout<<"Lancé des dés : "<<endl;
-            int de1=monJeu->lancer_des(1);
-            int de2=monJeu->lancer_des(2);
+            //int de1=monJeu->lancer_des(1);
+            //int de2=monJeu->lancer_des(2);
+            int de1=2;
+            int de2=0;
             if(de1==de2){
                 continuer_jouer= true;
                 if(nb_double>=2){
