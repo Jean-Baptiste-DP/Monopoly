@@ -23,7 +23,7 @@ jeu::jeu(){
 jeu::jeu(int numero) {
     paquet = new ListeCarte();
     monPlateau = new plateau(this);
-    ifstream monFlux("C:/Users/jbdur/CLionProjects/Monopoly/InitialPosition/Position"+to_string(numero)+".txt");
+    ifstream monFlux("C:/Users/ilona/Monopoly/InitialPosition/Position"+to_string(numero)+".txt");
     if(monFlux)  //On teste si tout est OK
     {
         string content_1;

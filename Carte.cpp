@@ -19,12 +19,6 @@ Carte::Carte(int numero_carte, int action_deplacement, int action_argent, int ac
     ipascher=impot_pascher;
 }
 
-void Carte::piocher_carte() {
-    //On tire aléatoirement une carte
-
-
-}
-
 void Carte::action_carte(Joueur *joueur){
     //On affiche le texte de la carte au joueur
 
