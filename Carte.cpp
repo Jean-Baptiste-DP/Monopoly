@@ -55,6 +55,9 @@ void Carte::action_carte(Joueur *joueur){
     if(lieu!=-1){
         joueur->aller_vers(lieu);
         joueur->executer_case();
+        if (texte=="Avancez jusqu'à la case Départ."){
+            joueur->crediter(200);
+        }
     }
 
     //Carte impôt maison et hotel
