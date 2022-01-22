@@ -24,7 +24,7 @@ jeu::jeu(){
 jeu::jeu(int numero) {
     paquet = new ListeCarte();
     monPlateau = new plateau(this);
-    ifstream monFlux("C:/Users/ilona/Monopoly/InitialPosition/Position"+to_string(numero)+".txt");
+    ifstream monFlux("C:/Users/jbdur/CLionProjects/Monopoly/InitialPosition/Position"+to_string(numero)+".txt");
     if(monFlux)  //On teste si tout est OK
     {
         string content_1;
@@ -40,7 +40,7 @@ jeu::jeu(int numero) {
             getline(monFlux,content_3,'/');
             listeJoueur[n_joueur]=Joueur(this,content_1,stoi(content_2),stoi(content_3));
             if (content_3=="10") {
-                listeJoueur[joueur_en_cours].setPrison(true);
+                listeJoueur[n_joueur].setPrison(true);
             }
             getline(monFlux,content_1,':');
             int nb_proprietes= stoi(content_1);
