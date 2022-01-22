@@ -6,6 +6,6 @@
 
 int main() {
     cout << "Test de jeu"<<endl;
-    jeu monJeu(0);
+    jeu monJeu(1);
     monJeu.Jouer();
 }

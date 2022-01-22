@@ -4,6 +4,7 @@
 #include "jeu.h"
 #include "Cases/Case.h"
 #include "plateau.h"
+#include "Joueur.h"
 
 jeu::jeu(){
     paquet = new ListeCarte();
@@ -38,6 +39,9 @@ jeu::jeu(int numero) {
             getline(monFlux,content_2,'/');
             getline(monFlux,content_3,'/');
             listeJoueur[n_joueur]=Joueur(this,content_1,stoi(content_2),stoi(content_3));
+            if (content_3=="10") {
+                listeJoueur[joueur_en_cours].setPrison(true);
+            }
             getline(monFlux,content_1,':');
             int nb_proprietes= stoi(content_1);
             for(int i=0;i<nb_proprietes;i++){
