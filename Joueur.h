@@ -42,7 +42,7 @@ public:
     int getNbTourPrison() const;
     void ajout_tour_prison();
     void remettre_tour_prison_a_zero();
-    void achat_maison();
+    void achat_maison(int n);
     void achat_hotel();
     bool operator==(Joueur autrejoueur);
     int getNbMaison() const;

@@ -172,8 +172,8 @@ void Joueur::ajout_tour_prison() {
 void Joueur::remettre_tour_prison_a_zero(){
     Joueur::nb_tour_prison=0;
 }
-void Joueur::achat_maison(){
-    nb_maison+=1;
+void Joueur::achat_maison(int n){
+    nb_maison+=n;
 }
 
 void Joueur::achat_hotel() {

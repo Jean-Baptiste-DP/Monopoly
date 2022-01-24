@@ -187,6 +187,7 @@ void plateau::AcheterMaison(Joueur *monJoueur) {
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
+            monJoueur->achat_maison(1);
         }
     }
     catch(exception const& e)
@@ -219,6 +220,8 @@ void plateau::AcheterHotel(Joueur *monJoueur) {
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
+            monJoueur->achat_maison(-4);
+            monJoueur->achat_hotel();
         }
     }
     catch(exception const& e)
