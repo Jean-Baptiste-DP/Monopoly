@@ -26,27 +26,6 @@ public:
     Carte();
     Carte(int numero_carte, int action_deplacement, int action_argent, int action_prison, int impot_pascher, int impot_cher, int action_lieu, string explication);
 
-    int getNumero() const;
-
-    void setNumero(int numero);
-
-    int getDeplacement() const;
-
-    void setDeplacement(int deplacement);
-
-    int getArgent() const;
-
-    void setArgent(int argent);
-
-    const string &getTexte() const;
-
-    void setTexte(const string &texte);
-
-    const string &getLieu() const;
-
-    void setLieu(const string &lieu);
-
-    void piocher_carte();
     void action_carte(Joueur *joueur);
 };
 

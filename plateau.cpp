@@ -183,12 +183,15 @@ void plateau::AcheterMaison(Joueur *monJoueur) {
     cout<<endl<<"Sur quel terrain voulez vous acheter une maison (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
     cin>>n_terrain;
 
-    if(n_terrain=="passer"){}
-    else{
+    try{
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
         }
+    }
+    catch(exception const& e)
+    {
+        //On ne fait rien quand il y a une erreur, quand n_terrain est un string (par exemple "passer") ou quand n_terrain n'est pas entre 0 et 21
     }
 }
 
@@ -212,12 +215,15 @@ void plateau::AcheterHotel(Joueur *monJoueur) {
     cout<<endl<<"Sur quel terrain voulez vous acheter un hotel (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
     cin>>n_terrain;
 
-    if(n_terrain=="passer"){}
-    else{
+    try{
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
             lesTerrains[int_n].AddMaison(monJoueur);
         }
+    }
+    catch(exception const& e)
+    {
+        //On ne fait rien quand il y a une erreur, quand n_terrain est un string (par exemple "passer") ou quand n_terrain n'est pas entre 0 et 21
     }
 }
 
@@ -270,7 +276,7 @@ void plateau::hypotheque(Joueur *monJoueur) {
     cout<<endl<<"Sur quel terrain voulez vous hypothequer (ou racheter) (entier attendu ou \"passer\" pour annuler la transaction) ?"<<endl;
     cin>>n_terrain;
 
-    if(n_terrain=="passer"){}else
+    try
     {
         int int_n = stoi(n_terrain);
         if(cases[int_n]==1){
@@ -284,6 +290,11 @@ void plateau::hypotheque(Joueur *monJoueur) {
 
         }
     }
+    catch(exception const& e)
+    {
+        //On ne fait rien quand il y a une erreur, quand n_terrain est un string (par exemple "passer") ou quand n_terrain n'est pas entre 0 et 27
+    }
+
 }
 
 void plateau::setProprietaire(Joueur *monJoueur, int n_terrain, int maisons) {

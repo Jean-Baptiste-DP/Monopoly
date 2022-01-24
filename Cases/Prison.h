@@ -9,7 +9,6 @@
 
 class Prison:public Case {
 private:
-    int nb_total;
 public:
     Prison(string nom_case);
     Prison();

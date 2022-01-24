@@ -4,6 +4,7 @@
 
 #ifndef MONOPOLY_PLATEAU_H
 #define MONOPOLY_PLATEAU_H
+#include <exception>
 #include "jeu.h"
 #include "Cases/Case.h"
 #include "Cases/Taxes.h"
